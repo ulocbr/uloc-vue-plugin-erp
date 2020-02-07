@@ -11,10 +11,8 @@ html, body {
   background-color #F7F8FA
 }
 
-/**
-ERP HEADER
- */
-.erp-menu {
+/* ERP HEADER */
+.u-erp-menu {
   width 100%
   height 22px
   background #C8C9D0
@@ -23,7 +21,7 @@ ERP HEADER
   position relative
   z-index 101
 
-  .erp-menu-items {
+  .u-erp-menu-items {
     list-style none
     padding 0
     margin 0 10px
@@ -51,6 +49,8 @@ ERP HEADER
         justify-content center
         padding 0 15px
         white-space nowrap
+        border transparent 1px solid
+        border-bottom transparent 1px solid
       }
 
       &.selected a {
@@ -65,24 +65,9 @@ ERP HEADER
       }
     }
   }
-
-  .erp-module-toggle{
-    position absolute
-    display block
-    right 10px
-    width 16px
-    height 12px
-    bottom -92px
-    cursor pointer
-    transition all 0.5s
-    &.toggled{
-      bottom 4px
-      transform rotate(-180deg)
-    }
-  }
 }
 
-.erp-menu-alerts {
+.u-erp-menu-alerts {
   display flex
   align-items center
   justify-content center
@@ -110,14 +95,14 @@ ERP HEADER
   }
 }
 
-.erp-account-info {
+.u-erp-account-info {
   margin 0 38px
   display flex
   align-items center
   justify-content center
   cursor pointer
 
-  .erp-account-img {
+  .u-erp-account-img {
     width 16px
     height 16px
     overflow hidden
@@ -125,7 +110,7 @@ ERP HEADER
     border #707070 1px solid
   }
 
-  .erp-account-logout a {
+  .u-erp-account-logout a {
     font-size 9px
     color #666666 !important
     text-transform uppercase
@@ -133,13 +118,13 @@ ERP HEADER
   }
 }
 
-.erp-module-menu {
+.u-erp-module-menu {
   height 98px
   background: rgb(255, 255, 255);
   background: -moz-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(240, 241, 245, 1) 100%);
   background: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(240, 241, 245, 1) 100%);
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(240, 241, 245, 1) 100%);
-  filter: unquote('progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#f0f1f5",GradientType=1);')
+  // filter: unquote('progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#f0f1f5",GradientType=1);')
   border-bottom #A0A0A0 1px solid
   display flex
   flex 1
@@ -148,12 +133,31 @@ ERP HEADER
   transition all 0.5s
   z-index 100
 
-  &.toggled{
+  &.toggled {
     transform translateY(-97px)
+  }
+
+}
+
+.u-erp-module-toggle {
+  position absolute
+  display block
+  right 10px
+  width 16px
+  height 12px
+  bottom 4px
+  cursor pointer
+  transition all 0.5s
+
+  &.toggled {
+    bottom auto
+    top 6px
+    z-index 104
+    transform rotate(-180deg)
   }
 }
 
-.erp-module-menu-component {
+.u-erp-module-menu-component {
   display flex
   flex-direction row
   position relative
@@ -170,7 +174,7 @@ ERP HEADER
     height 20px
     font-size 11px
     color #999999
-    background url("../menu-module-lbl-bg.png") center no-repeat
+    background url("../menu-module-lbl-bg.png") top center no-repeat
     background-size contain
     display flex
     align-content center
@@ -191,7 +195,7 @@ ERP HEADER
     background url("../menu-module-diviser.png") center no-repeat
   }
 
-  .erp-module-menu-items {
+  .u-erp-module-menu-items {
     display flex
     flex 1
     padding 0 10px
@@ -201,9 +205,10 @@ ERP HEADER
       display flex
     }
 
-    > li{
+    > li {
       margin-bottom 20px
     }
+
     > li > a {
       width 86px
       flex-direction column
@@ -213,19 +218,22 @@ ERP HEADER
       color #333333
       font-weight 400
       user-select none
-      > span{
+
+      > span {
         padding-top 2px
         text-align center
       }
-      &:hover{
-        .i-menu-m{
+
+      &:hover {
+        .i-menu-m {
           transform: translateY(-4px)
         }
       }
-      &:active{
-        -moz-box-shadow:    inset 0 0 10px #f2f2f2;
+
+      &:active {
+        -moz-box-shadow: inset 0 0 10px #f2f2f2;
         -webkit-box-shadow: inset 0 0 10px #f2f2f2;
-        box-shadow:         inset 0 0 10px #f2f2f2;
+        box-shadow: inset 0 0 10px #f2f2f2;
       }
     }
   }
@@ -236,47 +244,57 @@ ERP HEADER
     width 32px
     height 32px
     background url("../module-icons.png")
-    &.perfil{
-      background-position 0 0
+
+    &.perfil {
+      background-position 0 0 !important
     }
-    &.config{
-      background-position -32px 0
+
+    &.config {
+      background-position -32px 0 !important
     }
-    &.network{
-      background-position -(32*2)px 0
+
+    &.network {
+      background-position -(32 * 2 px) 0 !important
     }
-    &.mensagens{
-      background-position -(32*3)px 0
+
+    &.mensagens {
+      background-position -(32 * 3px) 0 !important
     }
-    &.knowledge{
-      background-position -(32*4)px 0
+
+    &.knowledge {
+      background-position -(32 * 4 px) 0 !important
     }
-    &.tasks{
-      background-position -(32*5)px 0
+
+    &.tasks {
+      background-position -(32 * 5 px) 0 !important
     }
-    &.metas{
-      background-position -(32*6)px 0
+
+    &.metas {
+      background-position -(32 * 6 px) 0 !important
     }
-    &.files{
-      background-position -(32*7)px 0
+
+    &.files {
+      background-position -(32 * 7 px) 0 !important
     }
-    &.home{
-      background-position -(32*8)px 0
+
+    &.home {
+      background-position -(32 * 8 px) 0 !important
     }
-    &.help{
-      background-position -(32*9)px 0
+
+    &.help {
+      background-position -(32 * 9 px) 0 !important
     }
   }
 
-  &.erp-menu-right{
-    // justify-self flex-end
+  &.u-erp-menu-right {
     margin-left auto
-    &::after{
+
+    &::after {
       display none
     }
   }
 }
 
-/* / ERP HEADER */
+/* END ERP HEADER */
 
 @import '../../components/*/*'

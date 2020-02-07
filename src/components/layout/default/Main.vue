@@ -44,7 +44,7 @@ export default {
           <span>Avisos importantes</span>
         </div>
         <div class="erp-account-info">
-          <div class="erp-account-img"><a><img src="../../../assets/photo.jpg"></a></div>
+          <div class="erp-account-img"><a><img src="https://static.tiagofelipe.com/photo.jpg"></a></div>
           <div class="erp-account-logout"><a>Sair</a></div>
         </div>
 

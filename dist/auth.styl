@@ -1,0 +1,251 @@
+/*!
+ * Auth Plugin v0.0.1
+ * Uloc Framework
+ * (c) 2018-present Tiago Felipe
+ * Released under the MIT License.
+ */
+@import url('https:
+body, html, .font-avenir, body a {
+  font-family 'Open Sans', sans-serif;
+}
+html, body {
+  background-color #F7F8FA
+}
+.erp-menu {
+  width 100%
+  height 22px
+  background #C8C9D0
+  border-bottom #A7A9B3 1px solid
+  display flex
+  position relative
+  z-index 101
+  .erp-menu-items {
+    list-style none
+    padding 0
+    margin 0 10px
+    display flex
+    flex-direction row
+    flex 1
+    li {
+      list-style none
+      padding 0
+      margin 3px 0 -1px 0
+      flex 0
+      display flex
+      a {
+        flex 1
+        color #333333
+        font-size 11px
+        text-transform uppercase
+        font-weight 500
+        text-align center
+        display flex
+        align-content center
+        align-items center
+        justify-content center
+        padding 0 15px
+        white-space nowrap
+      }
+      &.selected a {
+        color #000000
+        background-color #FFFFFF
+        border #A7A9B3 1px solid
+        border-bottom #FFFFFF 1px solid
+      }
+      a:hover {
+        color #000000
+      }
+    }
+  }
+  .erp-module-toggle {
+    position absolute
+    display block
+    right 10px
+    width 16px
+    height 12px
+    bottom -92px
+    cursor pointer
+    transition all 0.5s
+    &.toggled {
+      bottom 4px
+      transform rotate(-180deg)
+    }
+  }
+}
+.erp-menu-alerts {
+  display flex
+  align-items center
+  justify-content center
+  cursor pointer
+  i {
+    background-color #803AEC
+    font-size 9px
+    font-weight bold
+    color #FFFFFF
+    display flex
+    align-items center
+    justify-content center
+    width 16px
+    height 16px
+    border-radius 16px
+    font-style normal
+  }
+  span {
+    font-size 9px
+    color #666666
+    text-transform uppercase
+    padding 0 4px
+  }
+}
+.erp-account-info {
+  margin 0 38px
+  display flex
+  align-items center
+  justify-content center
+  cursor pointer
+  .erp-account-img {
+    width 16px
+    height 16px
+    overflow hidden
+    border-radius 16px
+    border #707070 1px solid
+  }
+  .erp-account-logout a {
+    font-size 9px
+    color #666666 !important
+    text-transform uppercase
+    padding 0 4px
+  }
+}
+.erp-module-menu {
+  height 98px
+  background: rgb(255, 255, 255);
+  background: -moz-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(240, 241, 245, 1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(240, 241, 245, 1) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(240, 241, 245, 1) 100%);
+  
+  border-bottom #A0A0A0 1px solid
+  display flex
+  flex 1
+  flex-wrap nowrap
+  position relative
+  transition all 0.5s
+  z-index 100
+  &.toggled {
+    transform translateY(-97px)
+  }
+}
+.erp-module-menu-component {
+  display flex
+  flex-direction row
+  position relative
+  > ul, > ul > li {
+    list-style none
+  }
+  .lbl {
+    position absolute
+    bottom 0
+    left 0
+    width 100%
+    height 20px
+    font-size 11px
+    color #999999
+    background url("menu-module-lbl-bg.png") center no-repeat
+    background-size contain
+    display flex
+    align-content center
+    justify-content center
+    justify-items center
+    align-items center
+    user-select none
+  }
+  &::after {
+    content ''
+    width 2px
+    display block
+    position absolute
+    right -2px
+    top 0
+    bottom 0
+    background url("menu-module-diviser.png") center no-repeat
+  }
+  .erp-module-menu-items {
+    display flex
+    flex 1
+    padding 0 10px
+    position relative
+    > li, > li > a {
+      display flex
+    }
+    > li {
+      margin-bottom 20px
+    }
+    > li > a {
+      width 86px
+      flex-direction column
+      align-items center
+      padding-top 12px
+      font-size 11px
+      color #333333
+      font-weight 400
+      user-select none
+      > span {
+        padding-top 2px
+        text-align center
+      }
+      &:hover {
+        .i-menu-m {
+          transform: translateY(-4px)
+        }
+      }
+      &:active {
+        -moz-box-shadow: inset 0 0 10px #f2f2f2;
+        -webkit-box-shadow: inset 0 0 10px #f2f2f2;
+        box-shadow: inset 0 0 10px #f2f2f2;
+      }
+    }
+  }
+  .i-menu-m {
+    transition all 0.2s
+    transform: translateY(0px)
+    width 32px
+    height 32px
+    background url("module-icons.png")
+    &.perfil {
+      background-position 0 0
+    }
+    &.config {
+      background-position -32px 0
+    }
+    &.network {
+      background-position -(32 * 2) px 0
+    }
+    &.mensagens {
+      background-position -(32 * 3) px 0
+    }
+    &.knowledge {
+      background-position -(32 * 4) px 0
+    }
+    &.tasks {
+      background-position -(32 * 5) px 0
+    }
+    &.metas {
+      background-position -(32 * 6) px 0
+    }
+    &.files {
+      background-position -(32 * 7) px 0
+    }
+    &.home {
+      background-position -(32 * 8) px 0
+    }
+    &.help {
+      background-position -(32 * 9) px 0
+    }
+  }
+  &.erp-menu-right {
+    margin-left auto
+    &::after {
+      display none
+    }
+  }
+}
