@@ -1,14 +1,14 @@
 export default {
-  name: 'ErpHeader',
+  name: 'ErpLayoutContainer',
   inject: {
     layout: {
       default () {
-        console.error('ErpHeader needs to be child of ULayout')
+        console.error('ErpLayoutContainer needs to be child of ULayout')
       }
     },
     erplayout: {
       default () {
-        console.error('ErpHeader needs to be child of ErpLayout')
+        console.error('ErpLayoutContainer needs to be child of ErpLayout')
       }
     }
   },
@@ -16,12 +16,13 @@ export default {
     return {
       layout: this.layout,
       erplayout: this.erplayout,
-      erpheader: this
+      erpcontainer: this
     }
   },
   props: {},
   data () {
-    return {}
+    return {
+    }
   },
   computed: {
     computedClass () {
@@ -33,9 +34,7 @@ export default {
     }
   },
   created () {
-    if (this.erplayout) {
-      this.erplayout.erpheader = this
-    }
+    console.log(this.erplayout.erpheader)
   },
   beforeDestroy () {
   },
@@ -43,7 +42,7 @@ export default {
   methods: {},
   render (h) {
     return h('div', {
-      staticClass: 'u-erp-header',
+      staticClass: 'u-erp-layout-container',
       'class': this.computedClass,
       style: this.computedStyle
     }, this.$slots.default)

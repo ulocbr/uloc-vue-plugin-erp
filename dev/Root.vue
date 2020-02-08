@@ -12,10 +12,12 @@ import MenuAccountInfo from '../src/components/layout/default/MenuAccountInfo'
 import MenuModule from '../src/components/layout/default/MenuModule'
 import MenuModuleComponent from '../src/components/layout/default/MenuModuleComponent'
 import menu from './sample-data/menu'
+import ErpLayoutContainer from '../src/components/layout/default/LayoutContainer'
 
 export default {
   name: 'AppRoot',
   components: {
+    ErpLayoutContainer,
     MenuModuleComponent,
     MenuModule,
     MenuAccountInfo,
@@ -51,23 +53,37 @@ export default {
 <template>
   <div id="uloc-app">
     <u-layout>
-      <u-page-container>
-        <ErpLayout>
-          <ErpHeader>
-            <ErpMenu>
-              <ErpMenuItems>
-                <ErpMenuItem @click="clickMenu($event, menu)" v-for="menu in menuComponents" :key="menu.menuName" :active="menu === activeMenu">{{menu.menuName}}</ErpMenuItem>
-              </ErpMenuItems>
-              <MenuAlerts :alerts="2" />
-              <MenuAccountInfo user-image="https://static.tiagofelipe.com/photo.jpg" />
-            </ErpMenu>
-            <MenuModule>
-              <MenuModuleComponent v-for="c in activeMenu.components" :right="c.right" :hide-label="c.hideLabel" :label="c.component" :key="c.component" :items="c.features" />
-            </MenuModule>
-          </ErpHeader>
-        </ErpLayout>
-        <!--<router-view />-->
-      </u-page-container>
+      <ErpLayout>
+        <ErpHeader>
+          <ErpMenu>
+            <ErpMenuItems>
+              <ErpMenuItem @click="clickMenu($event, menu)"
+                           v-for="menu in menuComponents"
+                           :key="menu.menuName"
+                           :active="menu === activeMenu"
+              >
+                {{ menu.menuName }}
+              </ErpMenuItem>
+            </ErpMenuItems>
+            <MenuAlerts :alerts="2" />
+            <MenuAccountInfo user-image="https://static.tiagofelipe.com/photo.jpg" />
+          </ErpMenu>
+          <MenuModule>
+            <MenuModuleComponent
+              v-for="c in activeMenu.components"
+              :right="c.right"
+              :hide-label="c.hideLabel"
+              :label="c.component"
+              :key="c.component"
+              :items="c.features"
+            />
+          </MenuModule>
+        </ErpHeader>
+        <ErpLayoutContainer>
+          ...
+        </ErpLayoutContainer>
+      </ErpLayout>
+      <!--<router-view />-->
     </u-layout>
   </div>
 </template>

@@ -1,7 +1,7 @@
 export default {
   name: 'MenuModule',
   inject: {
-    header: {
+    erpheader: {
       default () {
         console.error('ModuleMenu needs to be child of ModuleHeader')
       }
@@ -48,7 +48,11 @@ export default {
   },
   methods: {
     __toggleMenuModule () {
+      document.body.classList.remove('u-erp-layout-menu-toggled')
       this.toggledMenuModule = !this.toggledMenuModule
+      if (this.toggledMenuModule) {
+        document.body.classList.add('u-erp-layout-menu-toggled')
+      }
     }
   },
   render (h) {

@@ -1,8 +1,17 @@
 export default {
   name: 'ErpLayout',
   props: {},
+  provide () {
+    return {
+      layout: this.layout,
+      erplayout: this
+    }
+  },
   data () {
-    return {}
+    return {
+      erpheader: null,
+      erpcontainer: null
+    }
   },
   computed: {
     computedClass () {
