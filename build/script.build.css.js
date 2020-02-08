@@ -34,9 +34,10 @@ const nano = postcss([
 Promise
   .all([
     generateStylusBase('src/assets/styl/app.styl'),
-    generateStylusAddon()
+    generateStylusAddon(),
+    generateStylusIcons()
 
-    // generateSassFile('src/css/index.sass', 'dist/auth.sass'),
+    // generateSassFile('src/css/index.sass', 'dist/plugin.sass'),
     // validateSassFile('src/css/flex-addon.sass')
   ])
   .catch(e => {
@@ -132,11 +133,22 @@ function generateStylusAddon () {
   })
 }
 
+function generateStylusIcons () {
+  return generateStylusFiles({
+    sources: [
+      'src/assets/styl/icons.styl'
+    ],
+    name: '.iconpack'
+  })
+}
+
 function generateStylusFiles ({ sources, name = '', styl }) {
   return getConcatenatedContent(sources)
     .then(code => {
+      code = code.replace(/~assets/g, '__ASSET_DIR__')
       code = code.replace(/\.\.\//g, '').replace(/assets\//g, './assets/')
-      if (styl) { return buildUtils.writeFile(`dist/auth${name}.styl`, code) }
+      code = code.replace(/__ASSET_DIR__/g, './assets')
+      if (styl) { return buildUtils.writeFile(`dist/plugin${name}.styl`, code) }
       else { return code }
     })
     .then(code => compileStylus(code))
@@ -154,9 +166,9 @@ function generateStylusFiles ({ sources, name = '', styl }) {
 }
 
 function generateUMD (name, code, ext = '') {
-  return buildUtils.writeFile(`dist/auth${name}${ext}.css`, code, true)
+  return buildUtils.writeFile(`dist/plugin${name}${ext}.css`, code, true)
     .then(code => nano.process(code, { from: void 0 }))
-    .then(code => buildUtils.writeFile(`dist/auth${name}${ext}.min.css`, code.css, true))
+    .then(code => buildUtils.writeFile(`dist/plugin${name}${ext}.min.css`, code.css, true))
 }
 
 function getConcatenatedContent (src, noBanner) {
