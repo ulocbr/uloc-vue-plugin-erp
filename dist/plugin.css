@@ -175,7 +175,7 @@ body {
   height: 20px;
   font-size: 11px;
   color: #999;
-  background: url("menu-module-lbl-bg.png") top center no-repeat;
+  background: url("./assets/menu-module-lbl-bg.png") top center no-repeat;
   background-size: contain;
   display: flex;
   align-content: center;
@@ -195,7 +195,7 @@ body {
   right: -2px;
   top: 0;
   bottom: 0;
-  background: url("menu-module-diviser.png") center no-repeat;
+  background: url("./assets/menu-module-diviser.png") center no-repeat;
 }
 .u-erp-module-menu-component .u-erp-module-menu-items {
   display: flex;

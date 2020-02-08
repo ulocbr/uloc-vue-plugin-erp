@@ -227,7 +227,7 @@ html[dir], [dir] body {
           user-select: none;
 }
 [dir] .u-erp-module-menu-component .lbl {
-  background: url("menu-module-lbl-bg.png") top center no-repeat;
+  background: url("./assets/menu-module-lbl-bg.png") top center no-repeat;
   background-size: contain;
 }
 [dir=ltr] .u-erp-module-menu-component .lbl {
@@ -245,7 +245,7 @@ html[dir], [dir] body {
   bottom: 0;
 }
 [dir] .u-erp-module-menu-component::after {
-  background: url("menu-module-diviser.png") center no-repeat;
+  background: url("./assets/menu-module-diviser.png") center no-repeat;
 }
 [dir=ltr] .u-erp-module-menu-component::after {
   right: -2px;
