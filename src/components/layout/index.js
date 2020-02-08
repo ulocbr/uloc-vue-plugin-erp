@@ -1,3 +1,4 @@
+import ErpLayoutBase from './ErpLayoutBase'
 import ErpLayout from './default/ErpLayout'
 import LayoutContainer from './default/LayoutContainer'
 import Header from './default/Header'
@@ -10,6 +11,7 @@ import MenuModule from './default/MenuModule'
 import MenuModuleComponent from './default/MenuModuleComponent'
 
 export {
+  ErpLayoutBase,
   ErpLayout,
   LayoutContainer,
   Header,
