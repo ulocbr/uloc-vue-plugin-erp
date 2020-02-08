@@ -31,7 +31,7 @@ export default {
 <template>
   <div id="uloc-app">
     <u-layout>
-      <ErpLayoutBase :menu-data="menu" :user="{id: 1, name: 'Tiago Felipe', image: 'https://static.tiagofelipe.com/photo.jpg'}">
+      <ErpLayoutBase :menu-data="menu" :default-active-menu="menu[0].id" :user="{id: 1, name: 'Tiago Felipe', image: 'https://static.tiagofelipe.com/photo.jpg'}">
         <router-view />
       </ErpLayoutBase>
     </u-layout>

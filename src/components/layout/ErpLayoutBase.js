@@ -19,6 +19,10 @@ export default {
         return Array.isArray(value)
       } */
     },
+    defaultActiveMenu: {
+      type: String,
+      default: null
+    },
     alerts: {
       type: Array,
       default: () => []
@@ -44,8 +48,9 @@ export default {
     ErpLayout
   },
   data () {
+    let findMenuActive = this.menuData.filter((item) => item.id === this.defaultActiveMenu)
     return {
-      activeMenu: this.menuData && this.menuData[0]
+      activeMenu: findMenuActive ? findMenuActive[0] : null
     }
   },
   computed: {
@@ -54,11 +59,18 @@ export default {
     }
   },
   mounted () {
+    this.$refs.menu.activeMenu = this.activeMenu.id
   },
   methods: {
     clickMenu (e, menu) {
-      console.log(e, menu)
       this.activeMenu = menu
+      this.$emit('menuMoveCursor', menu.id)
+    },
+    __selectMenuById (id) {
+      let findMenu = this.menuData.filter((item) => item.id === id)
+      if (Array.isArray(findMenu) && findMenu.length > 0) {
+        this.activeMenu = findMenu[0]
+      }
     }
   },
   render (h) {
@@ -66,11 +78,17 @@ export default {
     return h(ErpLayout,
       [
         h(ErpHeader, [
-          h(ErpMenu, [
+          h(ErpMenu, {
+            ref: 'menu',
+            on: {
+              setActiveMenu: this.__selectMenuById
+            }
+          }, [
             h(ErpMenuItems, this.menuComponents.map(function (menuItem) {
               return h(ErpMenuItem, {
                 props: {
-                  active: menuItem === self.activeMenu
+                  id: menuItem.id,
+                  active: self.activeMenu === menuItem
                 },
                 on: {
                   click: (e) => self.clickMenu(e, menuItem)

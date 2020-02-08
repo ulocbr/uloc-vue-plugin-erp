@@ -1,6 +1,10 @@
 export default {
   name: 'ErpMenuItem',
   props: {
+    id: {
+      type: String,
+      required: true
+    },
     active: {
       type: Boolean,
       default: false
@@ -29,7 +33,8 @@ export default {
   watch: {},
   methods: {
     __onClick (e) {
-      this.$emit('click', e)
+      this.$parent.menu.setActiveMenu(this.id)
+      this.$emit('click', {event: e, id: this.id})
     }
   },
   render (h) {

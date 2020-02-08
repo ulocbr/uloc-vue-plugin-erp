@@ -1,8 +1,22 @@
 export default {
   name: 'ErpMenu',
+  inject: {
+    erpheader: {
+      default () {
+        console.error('ModuleMenu needs to be child of ModuleHeader')
+      }
+    }
+  },
+  provide () {
+    return {
+      erpheader: this.erpheader,
+      menu: this
+    }
+  },
   props: {},
   data () {
     return {
+      activeMenu: null
     }
   },
   computed: {
@@ -14,11 +28,21 @@ export default {
       return css
     }
   },
-  created () {},
+  created () {
+    if (this.erpheader) {
+      this.erpheader.menu = this
+    }
+  },
   beforeDestroy () {
   },
-  watch: {},
-  methods: {},
+  watch: {
+  },
+  methods: {
+    setActiveMenu (id) {
+      this.activeMenu = id
+      this.$emit('setActiveMenu', id)
+    }
+  },
   render (h) {
     return h('div', {
       staticClass: 'u-erp-menu',

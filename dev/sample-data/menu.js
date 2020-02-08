@@ -1,5 +1,6 @@
 export default [
   {
+    id: 'principal',
     menuName: 'Principal',
     components: [
       {
@@ -37,6 +38,7 @@ export default [
     ]
   },
   {
+    id: 'bens',
     menuName: 'Bens',
     components: [
       {
@@ -57,6 +59,7 @@ export default [
     ]
   },
   {
+    id: 'leiloes',
     menuName: 'Leilões',
     components: [
       {
@@ -71,10 +74,12 @@ export default [
     ]
   },
   {
+    id: 'comitentes',
     menuName: 'Comitentes',
     components: []
   },
   {
+    id: 'arrematantes',
     menuName: 'Arrematantes',
     components: [
       {
@@ -90,23 +95,41 @@ export default [
     ]
   },
   {
+    id: 'administrar-site',
     menuName: 'Administrar Site',
     components: []
   },
   {
+    id: 'financeiro',
     menuName: 'Financeiro',
     components: []
   },
   {
+    id: 'rh',
     menuName: 'RH',
     components: []
   },
   {
+    id: 'auditoria',
     menuName: 'Auditoria',
     components: []
   },
   {
+    id: 'configuracoes',
     menuName: 'Configurações',
-    components: []
+    components: [
+      {
+        component: 'Cadastro Básico',
+        features: [
+          {name: 'Cadastro Básico', icon: 'register'},
+          {name: 'Templates e Documentos', icon: 'template'},
+          {name: 'Taxas', icon: 'percent'}
+        ]
+      }/* ,
+      {
+        component: 'Configurações gerais',
+        features: []
+      } */
+    ]
   }
 ]

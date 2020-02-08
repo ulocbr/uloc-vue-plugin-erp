@@ -30,6 +30,9 @@ export default {
     }
   },
   created () {
+    if (this.erpheader) {
+      this.erpheader.modulemenu = this
+    }
   },
   beforeDestroy () {
   },
@@ -47,9 +50,12 @@ export default {
     }
   },
   methods: {
-    __toggleMenuModule () {
+    __toggleMenuModule (v) {
+      if (typeof v !== 'boolean') {
+        v = !this.toggledMenuModule
+      }
       document.body.classList.remove('u-erp-layout-menu-toggled')
-      this.toggledMenuModule = !this.toggledMenuModule
+      this.toggledMenuModule = v
       if (this.toggledMenuModule) {
         document.body.classList.add('u-erp-layout-menu-toggled')
       }

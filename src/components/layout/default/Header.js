@@ -21,7 +21,10 @@ export default {
   },
   props: {},
   data () {
-    return {}
+    return {
+      menu: null,
+      modulemenu: null
+    }
   },
   computed: {
     computedClass () {
@@ -40,7 +43,14 @@ export default {
   beforeDestroy () {
   },
   watch: {},
-  methods: {},
+  methods: {
+    getActualMenu () {
+      return this.menu.getActiveMenu()
+    },
+    setMenuModuleToggle (v) {
+      this.modulemenu && this.modulemenu.__toggleMenuModule(v)
+    }
+  },
   render (h) {
     return h('div', {
       staticClass: 'u-erp-header',
