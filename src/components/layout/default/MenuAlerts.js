@@ -2,8 +2,8 @@ export default {
   name: 'MenuAlerts',
   props: {
     alerts: {
-      type: Number,
-      default: 0
+      type: Array,
+      default: () => []
     }
   },
   data () {
@@ -30,7 +30,7 @@ export default {
       'class': this.computedClass,
       style: this.computedStyle
     }, [
-      h('i', this.alerts),
+      h('i', this.alerts.length),
       h('span', 'Avisos importantes')
     ])
   }

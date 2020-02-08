@@ -43,7 +43,7 @@ export default {
         // TODO: Validate item
         components.push(h('li', [
           h('a', [
-            h('i', {staticClass: 'i-menu-m ' + item.icon}),
+            h('i', {staticClass: 'erp-icon ' + item.icon}, [item.tip ? h('div', {staticClass: 'erp-module-item-tip'}, item.tip) : null]),
             h('span', item.name)
           ])
         ]))

@@ -1,8 +1,9 @@
 export default {
   name: 'MenuAccountInfo',
   props: {
-    userImage: {
-      type: String
+    user: {
+      type: Object,
+      required: true
     }
   },
   data () {
@@ -31,7 +32,7 @@ export default {
     }, [
       h('div', {staticClass: 'u-erp-account-img'}, [
         h('a', [
-          h('img', {attrs: {src: this.userImage}})
+          h('img', {attrs: {src: this.user.image}})
         ])
       ]),
       h('div', {staticClass: 'u-erp-account-logout'}, [

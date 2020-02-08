@@ -13,7 +13,7 @@ export default [
         component: 'Intranet',
         features: [
           {name: 'Social Network', icon: 'network'},
-          {name: 'Mensagens', icon: 'mensagens'},
+          {name: 'Mensagens', icon: 'mensagens', tip: '3'},
           {name: 'Base de conhecimento', icon: 'knowledge'}
         ]
       },
@@ -40,25 +40,35 @@ export default [
     menuName: 'Bens',
     components: [
       {
-        component: 'Processo de remoção',
+        component: 'Processo de Remoção',
         features: [
-          {name: 'Remocão', icon: ''},
-          {name: 'Rastreamento', icon: ''}
+          {name: 'Remocão', icon: 'truck'},
+          {name: 'Rastreamento', icon: 'track'}
         ]
       },
       {
         component: 'Administração de Bens',
         features: [
-          {name: 'Administrar Bens', icon: ''},
-          {name: 'Pátios', icon: ''},
-          {name: 'Cálculo de Estadas', icon: ''}
+          {name: 'Administrar Bens', icon: 'mat'},
+          {name: 'Pátios', icon: 'map-pointer'},
+          {name: 'Cálculo de Estadas', icon: 'calc'}
         ]
       }
     ]
   },
   {
     menuName: 'Leilões',
-    components: []
+    components: [
+      {
+        component: 'Administração de Leilão',
+        features: [
+          {name: 'Leilões', icon: 'auction'},
+          {name: 'PDS', icon: 'terminal'},
+          {name: 'Pagamento de Lotes', icon: 'thermal-print'},
+          {name: 'Ponto de Atendimento', icon: 'contact'}
+        ]
+      }
+    ]
   },
   {
     menuName: 'Comitentes',
@@ -66,7 +76,18 @@ export default [
   },
   {
     menuName: 'Arrematantes',
-    components: []
+    components: [
+      {
+        component: 'Administração de Arrematantes',
+        features: [
+          {name: 'Arrematantes', icon: 'user'},
+          {name: 'Exportar base', icon: 'export'},
+          {name: 'Campanhas de comunicação', icon: 'chat'},
+          {name: 'Monitoramento', icon: 'monitor'},
+          {name: 'Aprovação de cadastros', icon: 'list'}
+        ]
+      }
+    ]
   },
   {
     menuName: 'Administrar Site',
