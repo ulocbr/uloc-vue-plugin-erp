@@ -129,6 +129,6 @@
   ],
   "dependencies": {
     "axios": "^0.18.1",
-    "uloc-vue": "github:ulocbr/uloc-vue"
+    "uloc-vue": "ulocbr/uloc-vue#master"
   }
 }
