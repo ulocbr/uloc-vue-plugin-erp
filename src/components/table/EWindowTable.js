@@ -6,18 +6,19 @@ export default {
   components: {},
   computed: {
     computedClass () {
-      return {
-      }
+      return {}
     }
   },
   render (h) {
-    return h('table', {staticClass: 'erp-w-table', class: this.computedClass}, [
-      h('thead', [
-        this.columns.map((item) => {
-          return h('th', item)
-        })
-      ]),
-      h('tbody', this.$slots.default)
+    return h('div', {staticClass: 'erp-w-table', class: this.computedClass}, [
+      h('table', [
+        h('thead', [
+          this.columns.map((item) => {
+            return h('th', item)
+          })
+        ]),
+        h('tbody', this.$slots.default)
+      ])
     ])
   }
 }

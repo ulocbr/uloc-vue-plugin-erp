@@ -1,13 +1,14 @@
-.erp-btn{
-  background: rgb(242,243,245);
-  background: -moz-linear-gradient(180deg, rgba(242,243,245,1) 0%, rgba(222,224,230,1) 50%, rgba(236,238,242,1) 100%);
-  background: -webkit-linear-gradient(180deg, rgba(242,243,245,1) 0%, rgba(222,224,230,1) 50%, rgba(236,238,242,1) 100%);
-  background: linear-gradient(180deg, rgba(242,243,245,1) 0%, rgba(222,224,230,1) 50%, rgba(236,238,242,1) 100%);
+.erp-btn {
+  background: rgb(242, 243, 245);
+  background: -moz-linear-gradient(180deg, rgba(242, 243, 245, 1) 0%, rgba(222, 224, 230, 1) 50%, rgba(236, 238, 242, 1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(242, 243, 245, 1) 0%, rgba(222, 224, 230, 1) 50%, rgba(236, 238, 242, 1) 100%);
+  background: linear-gradient(180deg, rgba(242, 243, 245, 1) 0%, rgba(222, 224, 230, 1) 50%, rgba(236, 238, 242, 1) 100%);
   // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f2f3f5",endColorstr="#eceef2",GradientType=1);
   border #A9ACB5 1px solid
   border-radius 2px
   position relative
-  &::after{
+
+  &::after {
     content ''
     position absolute
     left 0
@@ -17,7 +18,16 @@
     border-radius 2px
     border #FAFBFC 1px solid
   }
-  &.erp-btn-size-md{
+
+  &.erp-btn-size-md {
     font-size 11px !important
   }
+}
+
+.erp-btn-circle-status {
+  width 15px
+  height 15px
+  border-radius 50%
+  display inline-block
+  background-color #f2f2f2
 }
