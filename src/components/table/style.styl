@@ -69,9 +69,66 @@
   width 160px
   align-items center
   padding 0 8px
-  -webkit-box-shadow: inset 0px 0px 9px -1px rgba(229,231,234,1);
-  -moz-box-shadow: inset 0px 0px 9px -1px rgba(229,231,234,1);
-  box-shadow: inset 0px 0px 9px -1px rgba(229,231,234,1);
+  -webkit-box-shadow: inset 0px 0px 9px -1px rgba(229, 231, 234, 1);
+  -moz-box-shadow: inset 0px 0px 9px -1px rgba(229, 231, 234, 1);
+  box-shadow: inset 0px 0px 9px -1px rgba(229, 231, 234, 1);
   font-size 11px
   color #000000
+}
+
+.erp-table {
+  box-shadow none
+  border-radius 0
+  background-color #FFFFFF
+  padding-top 10px
+
+  th, td {
+    padding 4px 8px // !important
+    // font-size 10px // !important
+    &:last-child {
+      max-width 40px // !important
+      padding 2px // !important
+    }
+  }
+
+  thead tr, tbody tr, tbody td {
+    height auto // !important
+    font-size 10px
+  }
+
+  thead tr th, thead tr td {
+    border-left #D4D7DC 1px solid
+    font-size 10px
+    text-transform uppercase
+    color #333333
+    font-weight bold
+
+    &:first-child {
+      border-left none
+    }
+  }
+
+  .u-checkbox-icon {
+    font-size 15px
+    width 15px
+    height 15px
+  }
+  .u-checkbox{
+    .text-faded {
+      color #D4D7DC !important
+    }
+  }
+  .u-table-sort-icon {
+    font-size 100% !important
+  }
+
+  .u-table-progress{
+    padding none !important
+    td, th{
+      padding 2px 0 !important
+      &:last-child{
+        padding 2px 0 !important
+      }
+    }
+  }
 }
