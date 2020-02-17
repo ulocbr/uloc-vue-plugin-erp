@@ -8,10 +8,16 @@
   transition: all 0.2s;
   width: 32px;
   height: 32px;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -5000px;
 }
 [dir] .erp-icon {
   transform: translateY(0px);
   background: url("./assets/module-icons.png");
+}
+.erp-icon.min {
+  zoom: 50%;
 }
 [dir=ltr] .erp-icon.perfil {
   background-position: 0 0 !important;
@@ -96,4 +102,13 @@
 }
 [dir] .erp-icon.percent {
   background-position: -352px -32px !important;
+}
+[dir] .erp-icon.search {
+  background-position: -384px -32px !important;
+}
+[dir] .erp-icon.success-circle {
+  background-position: -416px -32px !important;
+}
+[dir] .erp-icon.alert-circle {
+  background-position: -448px -32px !important;
 }

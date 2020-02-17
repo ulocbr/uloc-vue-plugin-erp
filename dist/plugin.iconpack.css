@@ -10,6 +10,12 @@
   width: 32px;
   height: 32px;
   background: url("./assets/module-icons.png");
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -5000px;
+}
+.erp-icon.min {
+  zoom: 50%;
 }
 .erp-icon.perfil {
   background-position: 0 0 !important;
@@ -91,4 +97,13 @@
 }
 .erp-icon.percent {
   background-position: -352px -32px !important;
+}
+.erp-icon.search {
+  background-position: -384px -32px !important;
+}
+.erp-icon.success-circle {
+  background-position: -416px -32px !important;
+}
+.erp-icon.alert-circle {
+  background-position: -448px -32px !important;
 }
