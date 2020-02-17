@@ -26,6 +26,8 @@ body {
   background-color: #f0eef0;
   flex: 1;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 .u-erp-header {
   flex: 1;

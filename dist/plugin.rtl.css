@@ -24,6 +24,8 @@ html[dir], [dir] body {
 .u-erp-layout-container {
   flex: 1;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 [dir] .u-erp-layout-container {
   background-color: #f0eef0;
