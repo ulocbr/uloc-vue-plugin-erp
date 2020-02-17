@@ -36,7 +36,7 @@ export default {
         ])
       ]),
       h('div', {staticClass: 'u-erp-account-logout'}, [
-        h('a', 'Sair')
+        h('a', {attrs: {href: '/#/logout'}}, 'Sair')
       ])
     ])
   }
