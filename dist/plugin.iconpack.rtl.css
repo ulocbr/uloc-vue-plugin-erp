@@ -9,8 +9,6 @@
   width: 32px;
   height: 32px;
   display: inline-block;
-  overflow: hidden;
-  text-indent: -5000px;
 }
 [dir] .erp-icon {
   transform: translateY(0px);
