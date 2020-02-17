@@ -449,6 +449,70 @@ $plugin = 'uloc-vue-plugin-erp'
     }
   }
 }
+.erp-tabs {
+  display flex
+  flex-direction row
+  padding-left 28px
+  margin-bottom -1px
+  align-items flex-end
+  z-index 1
+  position relative
+  .erp-tabs-item {
+    user-select none
+    position relative
+    z-index 2
+    background: rgb(220, 221, 225);
+    background: -moz-linear-gradient(180deg, rgba(220, 221, 225, 1) 0%, rgba(235, 236, 239, 1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(220, 221, 225, 1) 0%, rgba(235, 236, 239, 1) 100%);
+    background: linear-gradient(180deg, rgba(220, 221, 225, 1) 0%, rgba(235, 236, 239, 1) 100%);
+    height 21px;
+    min-width 100px
+    border #9DA0AA 1px solid
+    padding 4px 6px
+    font-size 11px
+    color #333333
+    font-weight normal
+    &::after {
+      content ''
+      position absolute
+      left 0
+      top 0
+      bottom 0
+      width 100%
+      border-radius 2px
+      border #EDEDF0 1px solid
+    }
+    &:not(.disabled):not(.u-btn-flat):not(.u-btn-outline):not(.u-btn-push) {
+      &:before {
+        content ''
+        position absolute
+        top 0
+        right 0
+        bottom 0
+        left 0
+        border-radius inherit
+        z-index -1
+        transition .3s cubic-bezier(.25, .8, .5, 1)
+      }
+      &:active {
+        outline 0
+        background-image none
+        box-shadow inset 0 5px 10px rgba(0, 0, 0, .190)
+      }
+    }
+    &:hover {
+      color inherit
+    }
+    &.active {
+      height 24px
+      background #FFFFFF !important
+      border-bottom #FFFFFF 1px solid
+      &::after {
+        border-bottom #FFFFFF 1px solid
+      }
+    }
+  }
+}
 .erp-window {
   .u-window {
     background-color #D0D1D7 !important
@@ -483,16 +547,22 @@ $plugin = 'uloc-vue-plugin-erp'
     background-color #FFFFFF
     border #9DA0AA 1px solid
     flex 1
-    -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.16);
-    -moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.16);
-    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.16);
+    -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.16);
     overflow auto
+    &.with-tabs {
+      
+    }
   }
-  .window-actions{
+  .erp-tabs {
+    margin-top 13px
+  }
+  .window-actions {
     text-align right
     padding-top 8px
     color #000000
-    .u-btn-inner{
+    .u-btn-inner {
       div {
         font-weight bold !important
       }

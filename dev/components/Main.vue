@@ -147,6 +147,25 @@ export default {
         .then((wid) => {
           console.log(wid)
         }) // return wid
+    },
+    openWindowWithTabs () {
+      console.log('click window test...')
+      let window = 'windowTestTabs'
+      !this.$uloc.window.get(window) && this.$uloc.window.new({
+        wid: window,
+        title: 'Novo Bem',
+        width: '1000',
+        height: '800',
+        minHeight: '500',
+        backdrop: false,
+        clickOutside: false,
+        windowClass: 'erp-window',
+        contentClass: 'overflow-hidden',
+        props: {}
+      }, () => import('../components/WindowTestTabs.vue'))
+        .then((wid) => {
+          console.log(wid)
+        }) // return wid
     }
   },
   components: {
@@ -287,6 +306,7 @@ export default {
     Window:
     <div class="m-t">
       <e-btn md label="Abrir janela" @click="openWindow"></e-btn>
+      <e-btn md label="Abrir janela com Tabs" @click="openWindowWithTabs"></e-btn>
     </div>
   </div>
 </template>

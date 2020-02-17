@@ -1,11 +1,14 @@
 export default {
   name: 'WindowContentBody',
   props: {
+    tabs: Boolean
   },
   components: {},
   computed: {
     computedClass () {
-      return {}
+      return {
+        'with-tabs': this.tabs
+      }
     }
   },
   render (h) {
