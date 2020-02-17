@@ -38,7 +38,6 @@ export default {
   },
   methods: {
     changeTab ({tab}) {
-      console.log(tab)
       this.tabActive = tab
     }
   },

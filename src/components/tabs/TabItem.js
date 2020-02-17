@@ -22,7 +22,6 @@ export default {
   },
   methods: {
     enable () {
-      console.log('Oi')
       this.meActive = true
     },
     disable () {
