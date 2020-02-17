@@ -128,6 +128,25 @@ export default {
         this.table.serverData = tableData
         this.table.loading = false
       }, 2000)
+    },
+    openWindow () {
+      console.log('click window test...')
+      let window = 'windowTest'
+      !this.$uloc.window.get(window) && this.$uloc.window.new({
+        wid: window,
+        title: 'Criar Leilão',
+        width: '904',
+        height: '600',
+        minHeight: '500',
+        backdrop: false,
+        clickOutside: false,
+        windowClass: 'erp-window',
+        contentClass: 'overflow-hidden',
+        props: {}
+      }, () => import('../components/WindowTest.vue'))
+        .then((wid) => {
+          console.log(wid)
+        }) // return wid
     }
   },
   components: {
@@ -145,7 +164,7 @@ export default {
 </script>
 
 <template>
-  <div class="wrapper">
+  <div class="wrapper-md">
     Tests:
     <div class="m-t">
       <u-btn color="primary" @click="menuDock = !menuDock">Dock Components Menu: {{ menuDock ? 'ON' : 'OFF' }}</u-btn>
@@ -262,6 +281,12 @@ export default {
           </u-td>
         </u-tr>
       </u-table>
+    </div>
+
+    <br><br>
+    Window:
+    <div class="m-t">
+      <e-btn md label="Abrir janela" @click="openWindow"></e-btn>
     </div>
   </div>
 </template>

@@ -417,3 +417,50 @@ body {
 .erp-table .u-table-progress th:last-child {
   padding: 2px 0 !important;
 }
+.erp-window .u-window {
+  background-color: #d0d1d7 !important;
+  border: #9da0aa 1px solid;
+}
+.erp-window .u-window .u-window-header-title {
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #fff;
+}
+.erp-window .u-window .u-window-content {
+  background-color: #f5f5f5 !important;
+  border: #a8aab4 1px solid;
+  margin: 0 5px 5px 5px;
+}
+.erp-w-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  height: 100%;
+  max-height: 100%;
+  padding: 5px 12px;
+}
+.erp-w-content .erp-w-content-header {
+  background-color: #ebecef;
+  border: #c2c4cb 1px solid;
+  min-height: 80px;
+}
+.erp-w-content .erp-w-content-body {
+  background-color: #fff;
+  border: #9da0aa 1px solid;
+  flex: 1;
+  box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.16);
+}
+.erp-w-content .window-actions {
+  text-align: right;
+  padding-top: 8px;
+  color: #000;
+}
+.erp-w-content .window-actions .u-btn-inner div {
+  font-weight: bold !important;
+}
+.erp-w-content .window-actions i {
+  font-size: 24px;
+  color: #0078d7;
+}
