@@ -1,10 +1,51 @@
 <template>
   <window-content>
     <window-content-header>...</window-content-header>
-    <window-content-body>...</window-content-body>
+    <window-content-body>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+      Bla Bla<br>
+    </window-content-body>
     <window-content-footer class="text-right">
       <div class="inline-block window-actions">
-        <u-btn label="Cancelar" icon="chevron-left" icon-type="fa" icon-style="light" flat no-caps @click="$uloc.window.close($root.wid)" />
+        <u-btn label="Cancelar" icon="chevron-left" icon-type="fa" icon-style="light" flat no-caps
+               @click="$uloc.window.close($root.wid)" />
         <u-btn label="Salvar (F2)" icon="save" icon-type="fa" icon-style="light" flat no-caps />
       </div>
     </window-content-footer>
