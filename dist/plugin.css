@@ -47,6 +47,10 @@ body {
   z-index: 101;
 }
 .u-erp-menu .u-erp-menu-items {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   list-style: none;
   padding: 0;
   margin: 0 10px;

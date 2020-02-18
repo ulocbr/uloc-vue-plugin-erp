@@ -50,6 +50,10 @@ html[dir], [dir] body {
   border-bottom: #a7a9b3 1px solid;
 }
 .u-erp-menu .u-erp-menu-items {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   list-style: none;
   display: flex;
   flex-direction: row;
