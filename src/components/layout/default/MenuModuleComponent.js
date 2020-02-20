@@ -43,11 +43,11 @@ export default {
         // TODO: Validate item
         let attrs = {}
         if (item.href) {
-          attrs['href'] = item.hr
+          attrs['href'] = item.href
         }
         components.push(h('li', [
           h('a', {
-            attrs
+            attrs: attrs
           }, [
             h('i', {staticClass: 'erp-icon ' + item.icon}, [item.tip ? h('div', {staticClass: 'erp-module-item-tip'}, item.tip) : null]),
             h('span', item.name)

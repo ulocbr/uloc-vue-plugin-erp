@@ -7,7 +7,7 @@ export default [
         component: 'Minha conta',
         features: [
           {name: 'Meu perfil', icon: 'perfil'},
-          {name: 'Configurações', icon: 'config'}
+          {name: 'Configurações', icon: 'config', href: '/#/home'}
         ]
       },
       {
