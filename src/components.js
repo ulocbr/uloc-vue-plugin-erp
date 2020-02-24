@@ -1,1 +1,5 @@
 export * from './components/layout/index.js'
+export * from './components/button/index.js'
+export * from './components/table/index.js'
+export * from './components/tabs/index.js'
+export * from './components/window/index.js'
