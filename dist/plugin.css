@@ -360,6 +360,49 @@ body {
 .erp-btn-table-options:hover {
   color: #000;
 }
+.erp-context-menu {
+  border: #a0a0a0 1px solid;
+  min-width: 200px;
+  height: auto;
+  overflow: hidden;
+  box-shadow: 3px 4px 4px 0px rgba(0,0,0,0.2);
+}
+.erp-context-menu ul {
+  padding: 2px;
+}
+.erp-context-menu ul li a {
+  font-size: 12px;
+  display: block;
+  padding: 8px 8px 8px 29px;
+  color: #000;
+  font-weight: 400;
+  position: relative;
+}
+.erp-context-menu ul li a:hover {
+  background-color: #e5e5e5;
+}
+.erp-context-menu ul li a .app-icon {
+  position: absolute;
+  left: 8px;
+}
+.erp-context-menu .has-submenu {
+  width: 100%;
+}
+.erp-context-menu .has-submenu:after {
+  display: block;
+  position: absolute;
+  right: 5px;
+  top: 40%;
+  width: 0;
+  height: 0;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid transparent;
+  border-right: 0;
+  border-bottom: 0.3em solid transparent;
+  border-left: 0.3em solid;
+}
 .erp-w-table {
   width: 100%;
   border: #b5b7bf 1px solid;

@@ -1,0 +1,46 @@
+.erp-context-menu {
+  border: #A0A0A0 1px solid;
+  min-width 200px
+  height auto
+  overflow hidden
+  -webkit-box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  ul {
+    padding 2px
+  }
+  ul li a {
+    font-size 12px
+    display block
+    padding 8px 8px 8px 29px
+    color: #000000
+    font-weight 400
+    position relative
+    &:hover {
+      background-color: #E5E5E5
+    }
+    .app-icon {
+      position absolute
+      left: 8px
+    }
+  }
+
+  .has-submenu{
+    width 100%
+    &:after{
+      display: block;
+      position: absolute;
+      right 5px
+      top: 40%
+      width: 0;
+      height: 0;
+      margin-left: .255em;
+      vertical-align: .255em;
+      content: "";
+      border-top: .3em solid transparent;
+      border-right: 0;
+      border-bottom: .3em solid transparent;
+      border-left: .3em solid;
+    }
+  }
+}

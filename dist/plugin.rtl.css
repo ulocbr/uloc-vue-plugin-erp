@@ -453,6 +453,76 @@ html[dir], [dir] body {
 .erp-btn-table-options:hover {
   color: #000;
 }
+.erp-context-menu {
+  min-width: 200px;
+  height: auto;
+  overflow: hidden;
+}
+[dir] .erp-context-menu {
+  border: #a0a0a0 1px solid;
+}
+[dir=ltr] .erp-context-menu {
+  box-shadow: 3px 4px 4px 0px rgba(0,0,0,0.2);
+}
+[dir=rtl] .erp-context-menu {
+  box-shadow: -3px 4px 4px 0px rgba(0,0,0,0.2);
+}
+[dir] .erp-context-menu ul {
+  padding: 2px;
+}
+.erp-context-menu ul li a {
+  font-size: 12px;
+  display: block;
+  color: #000;
+  font-weight: 400;
+  position: relative;
+}
+[dir=ltr] .erp-context-menu ul li a {
+  padding: 8px 8px 8px 29px;
+}
+[dir=rtl] .erp-context-menu ul li a {
+  padding: 8px 29px 8px 8px;
+}
+[dir] .erp-context-menu ul li a:hover {
+  background-color: #e5e5e5;
+}
+.erp-context-menu ul li a .app-icon {
+  position: absolute;
+}
+[dir=ltr] .erp-context-menu ul li a .app-icon {
+  left: 8px;
+}
+[dir=rtl] .erp-context-menu ul li a .app-icon {
+  right: 8px;
+}
+.erp-context-menu .has-submenu {
+  width: 100%;
+}
+.erp-context-menu .has-submenu:after {
+  display: block;
+  position: absolute;
+  top: 40%;
+  width: 0;
+  height: 0;
+  vertical-align: 0.255em;
+  content: "";
+}
+[dir] .erp-context-menu .has-submenu:after {
+  border-top: 0.3em solid transparent;
+  border-bottom: 0.3em solid transparent;
+}
+[dir=ltr] .erp-context-menu .has-submenu:after {
+  right: 5px;
+  margin-left: 0.255em;
+  border-right: 0;
+  border-left: 0.3em solid;
+}
+[dir=rtl] .erp-context-menu .has-submenu:after {
+  left: 5px;
+  margin-right: 0.255em;
+  border-left: 0;
+  border-right: 0.3em solid;
+}
 .erp-w-table {
   width: 100%;
   display: flex;
