@@ -21,7 +21,8 @@ export default {
           type: 'fa',
           iconStyle: 'regular'
         }
-      })
+      }),
+      this.$slots.default
     ])
   }
 }
