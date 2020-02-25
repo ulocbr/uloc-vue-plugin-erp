@@ -308,5 +308,17 @@ export default {
       <e-btn md label="Abrir janela" @click="openWindow"></e-btn>
       <e-btn md label="Abrir janela com Tabs" @click="openWindowWithTabs"></e-btn>
     </div>
+
+    <br><br>
+    Btn Circle Status:
+    <div class="m-t">
+      <e-btn-circle-status class="positive m-r-xs" />
+      <e-btn-circle-status class="negative m-r-xs" />
+      <e-btn-circle-status class="warning m-r-xs" />
+      <e-btn-circle-status class="blue m-r-xs" />
+      <e-btn-circle-status class="grey m-r-xs" />
+      <e-btn-circle-status class="black m-r-xs" />
+      <e-btn-circle-status class="purple m-r-xs" />
+    </div>
   </div>
 </template>

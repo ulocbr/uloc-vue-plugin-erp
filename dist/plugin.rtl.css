@@ -407,6 +407,41 @@ html[dir], [dir] body {
   width: 11px;
   height: 11px;
 }
+[dir] .erp-btn-circle-status.positive {
+  border: #4cb44b 1px solid;
+  background: #f8fdf5;
+  background: radial-gradient(circle at top, #f8fdf5 0%, #76d345 100%);
+}
+[dir] .erp-btn-circle-status.negative {
+  border: #830606 1px solid;
+  background: #f05050;
+  background: radial-gradient(circle at top, #ffc0c4 0%, #f05050 100%);
+}
+[dir] .erp-btn-circle-status.warning {
+  border: #bf8c00 1px solid;
+  background: #ffba30;
+  background: radial-gradient(circle at top, #fff 0%, #ffba30 100%);
+}
+[dir] .erp-btn-circle-status.blue {
+  border: #0b21ac 1px solid;
+  background: #adb7f5;
+  background: radial-gradient(circle at top, #adb7f5 0%, #3b52e6 100%);
+}
+[dir] .erp-btn-circle-status.grey {
+  border: #777 1px solid;
+  background: #6e6e6e;
+  background: radial-gradient(circle at top, #f0f0f0 0%, #6e6e6e 100%);
+}
+[dir] .erp-btn-circle-status.black {
+  border: #222 1px solid;
+  background: #000;
+  background: radial-gradient(circle at top, #828282 0%, #000 100%);
+}
+[dir] .erp-btn-circle-status.purple {
+  border: #7a41bc 1px solid;
+  background: #a15bf3;
+  background: radial-gradient(circle at top, #b181ea 0%, #a15bf3 100%);
+}
 .erp-btn-table-options {
   color: #707070;
   font-size: 14px;
