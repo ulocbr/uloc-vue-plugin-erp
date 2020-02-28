@@ -1,0 +1,176 @@
+.erp-input {
+  border 1px solid
+  border-top-color #9DA0AA
+  border-left-color #C2C4CB
+  border-right-color #C2C4CB
+  border-bottom-color #D9DAE0
+  background-color #FFFFFF
+  width 100%
+  display flex
+
+  input {
+    width 100%
+    font-size 11px
+    padding 2px 6px 0
+    height 20px
+    line-height 20px
+    color inherit
+    vertical-align: middle;
+  }
+}
+
+.erp-if, .erp-if:before, .erp-if:after, .erp-if-label, .erp-if-addon, .u-field-icon, .u-field-label, .erp-if-control, .u-field-bottom
+  transition all 0.2s
+
+.erp-if
+  height 20px
+  outline 0
+
+  &.text-primary {
+    color #333333 !important
+  }
+
+  .group
+    margin -5px
+
+    &:not(:first-child)
+      margin-top 0
+
+&.erp-if-s-b {
+  border #E8E3E3 1px solid
+}
+
+.erp-if-focusable
+  outline 0
+  cursor pointer
+
+.erp-if-inner
+  min-height 20px !important
+  align-items center
+
+.erp-if-has-label
+  min-height 20px
+
+  .erp-if-inner
+    min-height 20px !important
+    padding-top 0
+
+.erp-if-label
+  pointer-events none
+  user-select none
+  top 5px
+  left 5px
+  right 0
+  transform-origin left top 0
+  transform scale(1) translate(0, 0)
+  font-size 11px
+
+.erp-if-label-above
+  transform scale(.75) translate(0, -22px)
+
+.erp-if-addon
+  pointer-events none
+  opacity 0
+  font-size 11px
+  display flex
+  align-self center
+
+.erp-if-addon-left
+  padding-right 4px
+  padding-left 5px
+
+.erp-if-addon-right
+  padding-left 1px
+  padding-right 5px
+
+.erp-if-addon-visible
+  opacity 1
+
+.erp-if-control
+  cursor pointer
+  font-size 14px
+  width 14px
+  align-self center
+
+  &.u-icon
+    cursor pointer
+
+  &:hover
+    opacity .7
+
+.erp-if-control-before
+  margin-left 4px
+  margin-right 0px
+
+.erp-if-label, .erp-if-addon, .erp-if-control
+  color #999999
+
+/*.erp-if-inverted
+  min-height 38px
+  border-radius 2px
+  padding 8px
+  box-shadow $shadow-1
+
+  .u-input-target
+    color inherit
+
+  .erp-if-label, .erp-if-addon, .erp-if-control
+    color #ddd*/
+
+div.u-input-target
+  min-width 35px
+
+.erp-if-dark
+  &:hover:before
+    color white
+
+  &:not(.erp-if-inverted-light)
+    .u-input-target
+      color white
+
+.erp-if-inverted-light
+  .erp-if-label, .erp-if-addon, .erp-if-control
+    color #656565
+
+.erp-if-focused
+  border-color #333333
+  &::after {
+    pointer-events none
+    content ''
+    position absolute
+    left 0
+    top 0
+    bottom 0
+    width 100%
+    border #edeeef 1px solid
+    border-right #e3e4e5 3px solid
+  }
+
+  .erp-if-label, .erp-if-addon, .erp-if-control
+    color currentColor !important
+
+.erp-if-error {
+  border-color brown
+}
+
+.erp-if-warning {
+  border-color #AE8B00
+}
+
+.erp-if-disabled
+  cursor not-allowed !important
+
+  .erp-if-label, .erp-if-control, .u-input-target, .u-chip
+    opacity .6
+    cursor not-allowed !important
+
+
+.erp-if-size-2 {
+  height 26px
+  input{
+    font-size 12px
+    height 26px
+    line-height 26px
+    padding 2px 8px 0
+  }
+}
