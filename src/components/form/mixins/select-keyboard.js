@@ -77,6 +77,7 @@ export default {
           )
         }
         while (index !== this.keyboardIndex && !valid(index)) */
+        // Removi as linhas acima para desativar o loop infinito utilizando as seteas cima e baixo do teclado.
         index = index === -1 ? 0 : (index + offset)
         if (index > this.keyboardMaxIndex) {
           index = this.keyboardMaxIndex
