@@ -311,7 +311,8 @@ export default {
                 readonly: true
               },
               domProps: {
-                placeholder: this.placeholder
+                placeholder: this.placeholder,
+                value: this.fakeInputValue
               },
               on: {
                 input: this.__set,

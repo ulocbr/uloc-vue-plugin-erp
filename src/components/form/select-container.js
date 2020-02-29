@@ -6,10 +6,11 @@ export default {
   },
   computed: {},
   methods: {},
+  mounted () {},
   render (h) {
     return h('div', {staticClass: 'erp-select-container'}, [
-      h('div', {staticClass: 'erp-select-desc'}, this.description),
-      this.$slots.default
+      h('div', {ref: 'desc', staticClass: 'erp-select-desc hide'}, this.description),
+      h('div', {ref: 'body', staticClass: 'erp-select-body'}, this.$slots.default)
     ])
   }
 }

@@ -1,5 +1,5 @@
 import { getEventKey, stopAndPrevent } from 'uloc-vue/src/utils/event.js'
-import { normalizeToInterval } from 'uloc-vue/src/utils/format.js'
+// import { normalizeToInterval } from 'uloc-vue/src/utils/format.js'
 
 export default {
   data: () => ({
@@ -15,14 +15,10 @@ export default {
             return
           }
           const selected = this.$refs.popover.$el.querySelector('.select-highlight')
-          console.log(selected)
           if (selected && selected.scrollIntoView) {
-            console.log(1)
             if (selected.scrollIntoViewIfNeeded) {
-              console.log(2)
               return selected.scrollIntoViewIfNeeded(false)
             }
-            console.log(3)
             selected.scrollIntoView(this.keyboardMoveDirection < 0)
           }
         })
@@ -70,17 +66,23 @@ export default {
       if (this.$refs.popover.showing) {
         clearTimeout(this.keyboardMoveTimer)
         let
-          index = this.keyboardIndex,
-          valid = this.__keyboardIsSelectableIndex || (() => true)
+          index = this.keyboardIndex // ,
+          // valid = this.__keyboardIsSelectableIndex || (() => true)
 
-        do {
+        /* do {
           index = normalizeToInterval(
             index + offset,
             -1,
             this.keyboardMaxIndex
           )
         }
-        while (index !== this.keyboardIndex && !valid(index))
+        while (index !== this.keyboardIndex && !valid(index)) */
+        index = index === -1 ? 0 : (index + offset)
+        if (index > this.keyboardMaxIndex) {
+          index = this.keyboardMaxIndex
+        } else if (index === -1) {
+          index = 0
+        } else {}
 
         this.keyboardMoveDirection = index > this.keyboardIndex ? 1 : -1
         this.keyboardMoveTimer = setTimeout(() => { this.keyboardMoveDirection = false }, 500)
