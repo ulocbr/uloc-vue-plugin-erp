@@ -12,6 +12,7 @@ import EBtnCircleStatus from '../../src/components/button/EBtnCircleStatus'
 import {UTable} from 'uloc-vue'
 import EBtnTableOptions from '../../src/components/button/EBtnTableOption'
 import ErpInput from '../../src/components/form/input'
+import ErpSField from '../../src/components/form/SimpleField'
 
 export default {
   inject: {
@@ -173,6 +174,7 @@ export default {
     }
   },
   components: {
+    ErpSField,
     ErpInput,
     EBtnTableOptions,
     EBtnCircleStatus,
@@ -344,6 +346,50 @@ export default {
         <erp-input simple-border v-model="forms.input1" />
       </div>
 
+      <p class="m-t"><small>Field</small></p>
+      <div class="row">
+        <div class="col m-r">
+          <erp-s-field
+            label="Label Top Left"
+          >
+            <erp-input v-model="forms.input1" />
+          </erp-s-field>
+        </div>
+
+        <div class="col m-r">
+          <erp-s-field
+            view="tr"
+            label="Label Top Right"
+          >
+            <erp-input v-model="forms.input1" />
+          </erp-s-field>
+        </div>
+      </div>
+
+      <div class="row m-t-lg">
+        <div class="col m-r">
+          <erp-s-field
+            view="ll"
+            label="Label Left"
+            helper="Some helper"
+          >
+            <erp-input v-model="forms.input1" />
+          </erp-s-field>
+        </div>
+
+        <div class="col">
+          <erp-s-field
+            label-width="100px"
+            view="lr"
+            label="Label Left AR"
+            helper="Some helper"
+            helper-position="rb"
+          >
+            <erp-input v-model="forms.input1" />
+          </erp-s-field>
+        </div>
+      </div>
+
       <p class="m-t"><small>Colors</small></p>
       <div class="m-r" style="width: 200px; display: inline-block">
         <div>Error</div>
@@ -365,7 +411,8 @@ export default {
 
       <p class="m-t"><small>Placeholder</small></p>
       <div style="width: 200px">
-        <erp-input placeholder="Buscar" :before="[{icon: 'mail', handler () {}}]" suffix="@gmail.com" v-model="forms.input1" />
+        <erp-input placeholder="Buscar" :before="[{icon: 'mail', handler () {}}]" suffix="@gmail.com"
+                   v-model="forms.input1" />
       </div>
 
       <p class="m-t"><small>Sizes</small></p>

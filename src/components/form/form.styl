@@ -133,7 +133,11 @@ div.u-input-target
     color #656565
 
 .erp-if-focused
-  border-color #333333
+  border-top-color #8b8e98
+  border-left-color #a6a8af
+  border-right-color #a6a8af
+  border-bottom-color #b9bac0
+
   &::after {
     pointer-events none
     content ''
@@ -167,10 +171,85 @@ div.u-input-target
 
 .erp-if-size-2 {
   height 26px
-  input{
+
+  input {
     font-size 12px
     height 26px
     line-height 26px
     padding 2px 8px 0
+  }
+}
+
+.erp-s-field {
+  display flex
+
+  .erp-s-field-label {
+    font-size 11px
+    color #333333
+    user-select none
+  }
+
+  .erp-s-field-content{
+    position relative
+  }
+
+  .erp-s-field-helper{
+    font-size 10px
+    color #999999
+    position absolute
+    &.pos-left-top{
+      left 0
+      top -14px
+    }
+    &.pos-left-bottom{
+      left 0
+      bottom -14px
+    }
+    &.pos-right-top{
+      right 0
+      top -14px
+    }
+    &.pos-right-bottom{
+      right 0
+      bottom -14px
+    }
+  }
+
+  &.erp-field-layout-top {
+    flex-direction column
+
+    .erp-s-field-label {
+      padding-bottom 7px
+    }
+  }
+
+  &.erp-field-align-left {
+    .erp-s-field-label {
+      text-align left
+    }
+  }
+
+  &.erp-field-align-right {
+    .erp-s-field-label {
+      text-align right
+      justify-content flex-end
+    }
+  }
+
+  &.erp-field-layout-left {
+    flex-direction row
+    justify-content space-between
+
+    .erp-s-field-label {
+      // flex 1
+      white-space nowrap
+      margin-right 12px
+      display flex
+      align-self center
+    }
+
+    .erp-s-field-content {
+      flex 1
+    }
   }
 }

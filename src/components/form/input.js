@@ -1,8 +1,5 @@
 /**
  * TODO LIST:
- * [ ] Input Error, Warnning and Success Style Mixin
- * [ ] Input Icon Mixin
- * [ ] Input Size
  * [ ] Shortkey to focus input
  */
 import FrameMixin from './mixins/input-frame.js'
