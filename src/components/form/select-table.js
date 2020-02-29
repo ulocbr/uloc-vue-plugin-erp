@@ -35,17 +35,13 @@ export default {
   methods: {
     adjustPosition () {
       this.$nextTick(() => {
-        console.log('Chamou eu')
         if (!this.$fakeThead) {
           return
         }
         let tr = this.$el.querySelector('.erp-select-list-item')
-        console.log(tr)
         tr.childNodes.forEach((node, index) => {
-          console.log(node, index)
           this.$fakeThead.childNodes.forEach((cnode, cindex) => {
             if (cindex === index) {
-              console.log('Width: ', node.offsetWidth)
               cnode.style.minWidth = node.offsetWidth + 'px'
             }
           })

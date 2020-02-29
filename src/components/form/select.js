@@ -292,7 +292,7 @@ export default {
         nativeOn: {
           click: this.__onClick,
           focus: this.__onFocus,
-          keydown: this.__keyboardHandleKey
+          keydown: this.simple ? () => {} : this.__keyboardHandleKey
         }
       }, [
         h('div', {staticClass: 'erp-if-select'}),
@@ -304,8 +304,8 @@ export default {
               input: this.__set,
               focus: this.__onFocus,
               blur: this.__onInputBlur,
-              keydown: this.__onKeydown,
-              keyup: this.__onKeyup
+              keydown: this.simple ? () => {} : this.__onKeydown,
+              keyup: this.simple ? () => {} : this.__onKeyup
               // animationstart: this.__onAnimationStart
             }
           }, this.options.map(opt => {
