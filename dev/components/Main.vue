@@ -95,15 +95,19 @@ export default {
         select1: 2,
         select2: null,
         select2Options: [
-          {label: 'Aplicativo iOS', value: 1},
-          {label: 'Aplicativo Android', value: 2},
-          {label: 'Desktop', value: 3},
-          {label: 'Híbrido', value: 4},
-          {label: 'Windows', value: 5},
-          {label: 'Linux', value: 6},
-          {label: 'MacOS', value: 7},
-          {label: 'MicroTik', value: 8},
-          {label: 'N/d', value: 9}
+          {label: 'Aplicativo iOS', value: 1, desc: 'Mobile iOS compatible test'},
+          {label: 'Aplicativo Android', value: 2, desc: 'Android 8.2'},
+          {label: 'Desktop', value: 3, desc: 'Ubuntu 19 lts'},
+          {label: 'Híbrido', value: 4, desc: 'All platforms'},
+          {label: 'Windows', value: 5, desc: 'Windows 10 Professional'},
+          {label: 'Linux', value: 6, desc: 'Ubuntu or Centos'},
+          {label: 'MacOS', value: 7, desc: 'Last version'},
+          {label: 'MicroTik', value: 8, desc: 'n/d'},
+          {label: 'N/d', value: 9, desc: 'Other choices'}
+        ],
+        select2Columns: [
+          {label: 'Descrição', value: 'label'},
+          {label: 'Detalhes', value: 'desc'}
         ]
       }
     }
@@ -462,16 +466,21 @@ export default {
 
       <p class="m-t"><small>Simple Select</small></p>
       <div style="width: 200px">
-        <erp-select simple :options="[{label: 'Option 1', value: 1}, {label: 'Option 2', value: 2}]" v-model="forms.select1" /> {{forms.select1}}
+        <erp-select simple :options="[{label: 'Option 1', value: 1}, {label: 'Option 2', value: 2}]"
+                    v-model="forms.select1" />
+        {{forms.select1}}
       </div>
       <a @click="forms.select1 = 2">test</a>
 
       <p class="m-t"><small>Advanced Select</small></p>
       <div class="m-r" style="width: 200px; display: inline-block">
-        <erp-select placeholder="Selecione" :options="forms.select2Options" v-model="forms.select2" /> {{forms.select2}}
+        <erp-select placeholder="Selecione" :options="forms.select2Options" :columns="forms.select2Columns"
+                    v-model="forms.select2" />
+        {{forms.select2}}
       </div>
       <div class="m-r" style="width: 200px; display: inline-block">
-        <erp-select size="2" :options="forms.select2Options" v-model="forms.select2" /> {{forms.select2}}
+        <erp-select size="2" :options="forms.select2Options" v-model="forms.select2" />
+        {{forms.select2}}
       </div>
 
       <div style="height: 100px"></div>

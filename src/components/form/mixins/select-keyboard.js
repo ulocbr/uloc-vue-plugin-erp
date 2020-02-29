@@ -1,4 +1,4 @@
-import { getEventKey, stopAndPrevent } from 'uloc-vue/src/utils/event.js'
+import {getEventKey, stopAndPrevent} from 'uloc-vue/src/utils/event.js'
 // import { normalizeToInterval } from 'uloc-vue/src/utils/format.js'
 
 export default {
@@ -15,6 +15,19 @@ export default {
             return
           }
           const selected = this.$refs.popover.$el.querySelector('.select-highlight')
+          if (typeof selected.dataIndex === 'number') {
+            if (selected.dataIndex <= 0) {
+              // Verifica se existe thead
+              let thead = this.$refs.popover.$el.querySelector('.erp-select-thead:not(.thead-helper-header)')
+              if (thead && thead.scrollIntoView) {
+                if (thead.scrollIntoViewIfNeeded) {
+                  return thead.scrollIntoViewIfNeeded(false)
+                }
+                thead.scrollIntoView(this.keyboardMoveDirection < 0)
+              }
+              return
+            }
+          }
           if (selected && selected.scrollIntoView) {
             if (selected.scrollIntoViewIfNeeded) {
               return selected.scrollIntoViewIfNeeded(false)
@@ -67,7 +80,7 @@ export default {
         clearTimeout(this.keyboardMoveTimer)
         let
           index = this.keyboardIndex // ,
-          // valid = this.__keyboardIsSelectableIndex || (() => true)
+        // valid = this.__keyboardIsSelectableIndex || (() => true)
 
         /* do {
           index = normalizeToInterval(
@@ -83,10 +96,13 @@ export default {
           index = this.keyboardMaxIndex
         } else if (index === -1) {
           index = 0
-        } else {}
+        } else {
+        }
 
         this.keyboardMoveDirection = index > this.keyboardIndex ? 1 : -1
-        this.keyboardMoveTimer = setTimeout(() => { this.keyboardMoveDirection = false }, 500)
+        this.keyboardMoveTimer = setTimeout(() => {
+          this.keyboardMoveDirection = false
+        }, 500)
         this.keyboardIndex = index
         return
       }

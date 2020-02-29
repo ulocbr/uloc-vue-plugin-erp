@@ -1,6 +1,10 @@
 export default {
-  name: 'ETr',
-  props: {},
+  name: 'ErpSelectTr',
+  props: {
+    cfg: [Object, Array, String],
+    slotReplace: Boolean,
+    active: Boolean
+  },
   components: {},
   computed: {
     computedClass () {

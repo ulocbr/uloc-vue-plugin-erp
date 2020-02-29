@@ -340,7 +340,7 @@ div.u-input-target
   resize both
   border #A0A2AC 1px solid
   box-shadow none
-  min-height 60px
+  min-height 100px !important
   overflow auto
   height 100px
 
@@ -367,19 +367,91 @@ div.u-input-target
   padding 0
   margin 0
   list-style none
-  .erp-select-list-item{
-    font-size 11px
-    color #333333
-    padding 4px
+
+  .erp-select-list-item {
     user-select none
-    border-top: #FFFFFF 1px solid
-    border-bottom: #FFFFFF 1px solid
-    display flex
-    align-content center
-    &:hover, &.select-highlight{
-      border-top #DADADA 1px solid
-      border-bottom #DADADA 1px solid
-      background-color #F0F1F3
+
+    td {
+      border-top: #FFFFFF 1px solid
+      border-bottom: #FFFFFF 1px solid
+      border-right #CCCCCC 1px solid
+      font-size 11px
+      color #333333
+      padding 4px
+      align-content center
+
+      &:last-child {
+        border-right none
+      }
     }
+
+    &:hover, &.select-highlight {
+      td {
+        border-top #DADADA 1px solid
+        border-bottom #DADADA 1px solid
+        background-color #F0F1F3
+      }
+    }
+  }
+}
+
+.erp-select-table {
+  position relative
+
+  table {
+    width 100%
+    border-collapse collapse
+  }
+
+  .table-helper-header {
+    position sticky
+    top 0
+    left 0
+    width 100%
+    display block
+    height auto
+    z-index 11
+    border-collapse collapse
+
+    .thead-helper-header {
+      border-collapse collapse
+      th {
+        width auto
+
+        &:first-child {
+          border-left none
+        }
+
+        &:last-child {
+          border-right none
+        }
+      }
+    }
+  }
+
+  thead:not(.thead-helper-header) {
+    position absolute
+    top 0
+    left 0
+    width 100%
+    display block
+    height auto
+    z-index 10
+  }
+
+  th {
+    font-size 11px
+    color #000000
+    font-weight 400
+    text-align left
+    padding 0 6px
+    height 20px
+    max-height 20px
+    line-height 20px
+    border #CACBD3 1px solid
+    background: rgb(248, 248, 249);
+    background: -moz-linear-gradient(180deg, rgba(248, 248, 249, 1) 0%, rgba(242, 243, 244, 1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(248, 248, 249, 1) 0%, rgba(242, 243, 244, 1) 100%);
+    background: linear-gradient(180deg, rgba(248, 248, 249, 1) 0%, rgba(242, 243, 244, 1) 100%);
   }
 }

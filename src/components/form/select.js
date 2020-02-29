@@ -2,6 +2,9 @@ import Input from './input'
 import ErpInputFrame from './ErpInputFrame.js'
 import SelectKeyboard from './mixins/select-keyboard'
 import ErpSelectContainer from './select-container'
+import ErpSelectTable from './select-table'
+import ErpSelectTr from './select-tr'
+import ETd from '../table/ETd'
 import {UPopover} from 'uloc-vue'
 
 function defaultFilterFn (terms, obj) {
@@ -17,14 +20,20 @@ export default {
       required: true,
       validator: v => v.every(o => 'label' in o && 'value' in o)
     },
-    value: { required: true },
+    columns: Array,
+    value: {required: true},
     multiple: Boolean,
     simple: Boolean
   },
   data () {
     return {}
   },
-  watch: {},
+  watch: {
+    '$refs.popover.showing' (v) {
+      console.log('Mostrou', v)
+      v && this.$refs.table.adjustPosition()
+    }
+  },
   computed: {
     optModel () {
       if (this.multiple) {
@@ -34,7 +43,7 @@ export default {
       }
     },
     visibleOptions () {
-      let opts = this.options.map((opt, index) => Object.assign({}, opt, { index }))
+      let opts = this.options.map((opt, index) => Object.assign({}, opt, {index}))
       if (this.filter && this.terms.length) {
         const lowerTerms = this.terms.toLowerCase()
         opts = opts.filter(opt => this.filterFn(lowerTerms, opt))
@@ -94,6 +103,10 @@ export default {
     },
     show () {
       this.__keyboardCalcIndex()
+      this.$refs.table.adjustPosition()
+      window.setTimeout(() => {
+        this.$refs.table.adjustPosition()
+      }, 1)
       if (this.$refs.popover) {
         return this.$refs.popover.show()
       }
@@ -115,7 +128,9 @@ export default {
         const index = sel === void 0 ? -1 : Math.max(-1, this.visibleOptions.findIndex(opt => sel.includes(opt.value)))
         if (index > -1) {
           this.keyboardMoveDirection = true
-          setTimeout(() => { this.keyboardMoveDirection = false }, 1)
+          setTimeout(() => {
+            this.keyboardMoveDirection = false
+          }, 1)
           this.__keyboardShow(index)
         }
       })
@@ -138,8 +153,7 @@ export default {
 
       if (this.multiple) {
         this.__toggleMultiple(opt.value, opt.disable)
-      }
-      else {
+      } else {
         this.__singleSelect(opt.value, opt.disable)
       }
     },
@@ -216,10 +230,9 @@ export default {
         index = model.indexOf(value)
 
       if (index > -1) {
-        this.$emit('remove', { index, value: model.splice(index, 1) })
-      }
-      else {
-        this.$emit('add', { index: model.length, value })
+        this.$emit('remove', {index, value: model.splice(index, 1)})
+      } else {
+        this.$emit('add', {index: model.length, value})
         model.push(value)
       }
 
@@ -342,23 +355,30 @@ export default {
                 keydown: this.__keyboardHandleKey
               }
             }, [h(ErpSelectContainer, {
+            }, [h(ErpSelectTable, {
+              ref: 'table',
               props: {
-                description: 'Descrição'
-              }
-            }, [h('ul', {staticClass: 'erp-select-list'}, this.visibleOptions.map((opt, index) => {
-              return h('li', {
+                columns: this.columns
+              },
+              staticClass: 'erp-select-list'
+            }, this.visibleOptions.map((opt, index) => {
+              return h(ErpSelectTr, {
                 key: index,
                 'class': [
                   opt.disable ? 'text-faded' : 'cursor-pointer',
                   index === this.keyboardIndex ? 'select-highlight' : '',
                   opt.className || ''
                 ],
+                domProps: {
+                  dataIndex: index,
+                  dataValue: opt.value
+                },
                 props: {
                   cfg: opt,
                   slotReplace: true,
                   active: this.multiple ? void 0 : this.value === opt.value
                 },
-                on: {
+                nativeOn: {
                   '!click': () => {
                     const action = this.multiple ? '__toggleMultiple' : '__singleSelect'
                     this[action](opt.value, opt.disable)
@@ -367,11 +387,15 @@ export default {
                     !opt.disable && this.__mouseEnterHandler(e, index)
                   }
                 },
-                staticClass: 'erp-select-list-item',
-                domProps: {
-                  value: opt.value
-                }
-              }, opt.label)
+                staticClass: 'erp-select-list-item'
+              }, [
+                !this.columns ? h(ETd, opt.label) : this.columns.map((column) => {
+                  if (typeof opt[column.value] === 'undefined') {
+                    console.error(`Column ${column.value} not exits in option value`)
+                  }
+                  return h(ETd, opt[column.value])
+                })
+              ])
             }))])])
           ]
       ].concat([h('div', {staticClass: 'erp-select-line-helper'}), this.$slots.default]))
