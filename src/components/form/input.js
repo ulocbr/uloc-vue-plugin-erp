@@ -8,12 +8,12 @@ import inputTypes from 'uloc-vue/src/components/input/input-types.js'
 import frameDebounce from 'uloc-vue/src/utils/frame-debounce'
 import {between} from 'uloc-vue/src/utils/format.js'
 import UResizeObservable from 'uloc-vue/src/components/observables/UResizeObservable.js'
-import UInputFrame from './ErpInputFrame.js'
+import ErpInputFrame from './ErpInputFrame.js'
 // import { USpinner } from '../spinner/USpinner.js'
 import {USpinner, UIcon} from 'uloc-vue'
 
 export default {
-  name: 'UInput',
+  name: 'ErpInput',
   mixins: [FrameMixin, InputMixin],
   props: {
     value: {required: true},
@@ -319,7 +319,7 @@ export default {
   },
 
   render (h) {
-    return h(UInputFrame,
+    return h(ErpInputFrame,
       {
         staticClass: 'erp-input',
         props: {

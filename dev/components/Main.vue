@@ -13,6 +13,8 @@ import {UTable} from 'uloc-vue'
 import EBtnTableOptions from '../../src/components/button/EBtnTableOption'
 import ErpInput from '../../src/components/form/input'
 import ErpSField from '../../src/components/form/SimpleField'
+import HelperInputBtn from '../../src/components/form/helpers/HelperInputBtn'
+import ErpSelect from '../../src/components/form/select'
 
 export default {
   inject: {
@@ -89,7 +91,20 @@ export default {
         loading: false
       },
       forms: {
-        input1: 'teste'
+        input1: 'teste',
+        select1: 2,
+        select2: null,
+        select2Options: [
+          {label: 'Aplicativo iOS', value: 1},
+          {label: 'Aplicativo Android', value: 2},
+          {label: 'Desktop', value: 3},
+          {label: 'Híbrido', value: 4},
+          {label: 'Windows', value: 5},
+          {label: 'Linux', value: 6},
+          {label: 'MacOS', value: 7},
+          {label: 'MicroTik', value: 8},
+          {label: 'N/d', value: 9}
+        ]
       }
     }
   },
@@ -174,6 +189,8 @@ export default {
     }
   },
   components: {
+    ErpSelect,
+    HelperInputBtn,
     ErpSField,
     ErpInput,
     EBtnTableOptions,
@@ -352,7 +369,14 @@ export default {
           <erp-s-field
             label="Label Top Left"
           >
-            <erp-input v-model="forms.input1" />
+            <!--<div class="row">
+              <div class="col"><erp-input v-model="forms.input1" /></div>
+              <div class="m-l-xs flex flex-center no-wrap"><a><i class="erp-icon search min"></i> </a></div>
+            </div>-->
+            <helper-input-btn>
+              <erp-input slot="input" v-model="forms.input1" />
+              <a><i class="erp-icon search min"></i> </a>
+            </helper-input-btn>
           </erp-s-field>
         </div>
 
@@ -428,6 +452,34 @@ export default {
           <erp-input size="2" v-model="forms.input1" />
         </div>
       </div>
+
+      <p class="m-t"><small>Disabled</small></p>
+      <div style="width: 200px">
+        <erp-input disable v-model="forms.input1" />
+      </div>
+
+      <hr>
+
+      <p class="m-t"><small>Simple Select</small></p>
+      <div style="width: 200px">
+        <erp-select simple :options="[{label: 'Option 1', value: 1}, {label: 'Option 2', value: 2}]" v-model="forms.select1" /> {{forms.select1}}
+      </div>
+      <a @click="forms.select1 = 2">test</a>
+
+      <p class="m-t"><small>Advanced Select</small></p>
+      <div class="m-r" style="width: 200px; display: inline-block">
+        <erp-select placeholder="Selecione" :options="forms.select2Options" v-model="forms.select2" /> {{forms.select2}}
+      </div>
+      <div class="m-r" style="width: 200px; display: inline-block">
+        <erp-select size="2" :options="forms.select2Options" v-model="forms.select2" /> {{forms.select2}}
+      </div>
+
+      <div style="height: 100px"></div>
+
+      <select>
+        <option>Opt 1</option>
+        <option>Opt 2</option>
+      </select>
 
     </div>
   </div>
