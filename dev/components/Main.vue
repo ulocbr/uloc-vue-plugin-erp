@@ -95,7 +95,7 @@ export default {
         select1: 2,
         select2: null,
         select2Options: [
-          {label: 'Aplicativo iOS', value: 1, desc: 'Mobile iOS compatible test'},
+          {nome: 'Aplicativo iOS', value: 1, desc: 'Mobile iOS compatible test', tipo: {id: 100, nome: 'Teste Object Subitem'}},
           {label: 'Aplicativo Android', value: 2, desc: 'Android 8.2'},
           {label: 'Desktop', value: 3, desc: 'Ubuntu 19 lts'},
           {label: 'Híbrido', value: 4, desc: 'All platforms'},

@@ -102,6 +102,9 @@ export default {
       this.$refs.popover && this[this.$refs.popover.showing ? 'hide' : 'show']()
     },
     show () {
+      if (!this.visibleOptions || (Array.isArray(this.visibleOptions) && this.visibleOptions.length === 0)) {
+        return
+      }
       this.__keyboardCalcIndex()
       this.$refs.table.adjustPosition()
       window.setTimeout(() => {
