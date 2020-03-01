@@ -278,7 +278,7 @@ export default {
             // slot: this.toggle ? 'right' : 'left',
             props: {
               size: 'sm',
-              keepColor: true,
+              // keepColor: true,
               color: opt.color || this.color,
               dark: this.dark,
               value: this.optModel[opt.index],
@@ -289,7 +289,7 @@ export default {
           h(URadio, {
             slot: 'left',
             props: {
-              keepColor: true,
+              // keepColor: true,
               color: opt.color || this.color,
               dark: this.dark,
               value: this.value,
@@ -436,7 +436,7 @@ export default {
                   if (typeof opt[column.value] === 'undefined') {
                     console.error(`Column ${column.value} not exits in option value`)
                   }
-                  return h(ETd, [opt[column.value]].concat(columnIndex === 0 && multipleOption(opt)))
+                  return h(ETd, [columnIndex === 0 && multipleOption(opt)].concat([h('span', opt[column.value])]))
                 })
               ])
             }))])])

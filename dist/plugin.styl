@@ -747,9 +747,16 @@ div.u-input-target
       font-size 11px
       color #333333
       padding 4px
+      padding-left 8px
       align-content center
+      &:first-child {
+        padding-left 4px
+      }
       &:last-child {
         border-right none
+      }
+      .u-option {
+        margin-right 4px
       }
     }
     &:hover, &.select-highlight {
@@ -759,7 +766,7 @@ div.u-input-target
         background-color #F0F1F3
       }
     }
-    &.item-selected{
+    &.item-selected {
       td {
         font-weight bold
       }
@@ -768,6 +775,9 @@ div.u-input-target
       font-size: 15px;
       width: 15px;
       height: 15px;
+    }
+    .u-checkbox .text-faded {
+      color: #d4d7dc !important;
     }
   }
 }
@@ -813,7 +823,7 @@ div.u-input-target
     color #000000
     font-weight 400
     text-align left
-    padding 0 6px
+    padding 0 8px
     height 20px
     max-height 20px
     line-height 20px
@@ -822,6 +832,9 @@ div.u-input-target
     background: -moz-linear-gradient(180deg, rgba(248, 248, 249, 1) 0%, rgba(242, 243, 244, 1) 100%);
     background: -webkit-linear-gradient(180deg, rgba(248, 248, 249, 1) 0%, rgba(242, 243, 244, 1) 100%);
     background: linear-gradient(180deg, rgba(248, 248, 249, 1) 0%, rgba(242, 243, 244, 1) 100%);
+    &:first-child {
+      padding-left 4px
+    }
   }
 }
 .erp-w-table {

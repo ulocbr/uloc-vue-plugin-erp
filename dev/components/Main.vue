@@ -287,7 +287,6 @@ export default {
           <u-th auto-width>
             <u-checkbox
               v-model="props.selected"
-              :indeterminate="props.partialSelected"
               size="sm"
             />
           </u-th>
