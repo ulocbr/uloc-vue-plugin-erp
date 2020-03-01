@@ -432,7 +432,7 @@ export default {
                 },
                 staticClass: 'erp-select-list-item'
               }, [
-                !this.columns ? h(ETd, [opt.label].concat(multipleOption(opt))) : this.columns.map((column, columnIndex) => {
+                !this.columns ? h(ETd, [multipleOption(opt)].concat([h('span', opt.label)])) : this.columns.map((column, columnIndex) => {
                   if (typeof opt[column.value] === 'undefined') {
                     console.error(`Column ${column.value} not exits in option value`)
                   }
