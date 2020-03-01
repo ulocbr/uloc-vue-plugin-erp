@@ -457,6 +457,20 @@ export default {
         </div>
       </div>
 
+      <p class="m-t"><small>Shortkey</small></p>
+      <div class="m-r" style="width: 200px; display: inline-block">
+        <div>Size 1 (Default)</div>
+        <div>
+          <erp-input shortkey="F3" v-model="forms.input1" />
+        </div>
+      </div>
+      <div class="m-r" style="width: 200px; display: inline-block">
+        <div>Size 2</div>
+        <div>
+          <erp-input :shortkey="['Ctrl','F3']" size="2" v-model="forms.input1" />
+        </div>
+      </div>
+
       <p class="m-t"><small>Disabled</small></p>
       <div style="width: 200px">
         <erp-input disable v-model="forms.input1" />

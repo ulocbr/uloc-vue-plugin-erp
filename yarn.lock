@@ -8530,7 +8530,7 @@ uglify-to-browserify@~1.0.0:
 
 uloc-vue@ulocbr/uloc-vue#master:
   version "0.0.1"
-  resolved "https://codeload.github.com/ulocbr/uloc-vue/tar.gz/9ff0d3092baa98bf32978c15af3b290ba4119232"
+  resolved "https://codeload.github.com/ulocbr/uloc-vue/tar.gz/0d852d01a6f91a61971bfa13b423d79ab9d0e54a"
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"

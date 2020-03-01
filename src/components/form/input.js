@@ -34,7 +34,8 @@ export default {
     step: Number,
     upperCase: Boolean,
     lowerCase: Boolean,
-    simpleBorder: Boolean
+    simpleBorder: Boolean,
+    shortkey: [String, Array]
   },
   data () {
     return {
@@ -128,6 +129,18 @@ export default {
     },
     computedStep () {
       return this.step || (this.decimals ? 10 ** -this.decimals : 'any')
+    },
+    shortkeyString () {
+      if (Array.isArray(this.shortkey)) {
+        return this.shortkey.join('+')
+      }
+      return this.shortkey
+    },
+    shortkeyFormated () {
+      if (!Array.isArray(this.shortkey)) {
+        return [String(this.shortkey).toLowerCase()]
+      }
+      return this.shortkey.map((s) => String(s).toLowerCase())
     }
   },
   methods: {
@@ -284,6 +297,13 @@ export default {
     },
 
     __getInput (h) {
+      let directives = []
+      if (this.shortkey) {
+        directives.push({
+          name: 'shortkey',
+          value: this.shortkeyFormated
+        })
+      }
       return h('input', {
         ref: 'input',
         staticClass: 'col u-input-target u-no-input-spinner',
@@ -299,11 +319,13 @@ export default {
         on: {
           input: this.__set,
           focus: this.__onFocus,
+          shortkey: this.__onFocus,
           blur: this.__onInputBlur,
           keydown: this.__onKeydown,
           keyup: this.__onKeyup
           // animationstart: this.__onAnimationStart
-        }
+        },
+        directives: directives
       })
     }
   },
@@ -324,7 +346,7 @@ export default {
         staticClass: 'erp-input',
         props: {
           prefix: this.prefix,
-          suffix: this.suffix,
+          suffix: this.shortkeyString || this.suffix,
           stackLabel: this.stackLabel,
           floatLabel: this.floatLabel,
           error: this.error,
