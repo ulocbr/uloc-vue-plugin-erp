@@ -418,8 +418,8 @@ export default {
 
         (this.isLoading && h(USpinner, {
           slot: 'after',
-          staticClass: 'u-if-control',
-          props: {size: '24px'}
+          staticClass: 'erp-if-control',
+          props: {size: '11px'}
         })) || void 0
       ].concat(this.$slots.after).concat(this.$slots.default)))
   }

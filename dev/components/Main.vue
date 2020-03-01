@@ -428,7 +428,7 @@ export default {
       <div class="m-r" style="width: 200px; display: inline-block">
         <div>Warnning</div>
         <div>
-          <erp-input warning v-model="forms.input1" />
+          <erp-input warning v-model="forms.input1" :loading="true" />
         </div>
       </div>
 

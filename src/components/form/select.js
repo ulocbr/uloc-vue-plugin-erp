@@ -5,7 +5,7 @@ import ErpSelectContainer from './select-container'
 import ErpSelectTable from './select-table'
 import ErpSelectTr from './select-tr'
 import ETd from '../table/ETd'
-import {UPopover} from 'uloc-vue'
+import {UPopover, USpinner} from 'uloc-vue'
 
 function defaultFilterFn (terms, obj) {
   return obj.label.toLowerCase().indexOf(terms) > -1
@@ -397,7 +397,12 @@ export default {
                 })
               ])
             }))])])
-          ]
+          ],
+        (this.isLoading && h(USpinner, {
+          slot: 'after',
+          staticClass: 'u-if-control',
+          props: {size: '24px'}
+        })) || void 0
       ].concat([h('div', {staticClass: 'erp-select-line-helper'}), this.$slots.default]))
   }
 }
