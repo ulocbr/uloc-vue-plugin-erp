@@ -1030,6 +1030,11 @@ div.u-input-target {
 .erp-select-list .erp-select-list-item.item-selected td {
   font-weight: bold;
 }
+.erp-select-list .erp-select-list-item .u-checkbox-icon {
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
+}
 .erp-select-table {
   position: relative;
 }

@@ -5,7 +5,7 @@ import ErpSelectContainer from './select-container'
 import ErpSelectTable from './select-table'
 import ErpSelectTr from './select-tr'
 import ETd from '../table/ETd'
-import {UPopover, USpinner} from 'uloc-vue'
+import {UCheckbox, UPopover, URadio, USpinner, UToggle} from 'uloc-vue'
 
 function defaultFilterFn (terms, obj) {
   return obj.label.toLowerCase().indexOf(terms) > -1
@@ -23,10 +23,16 @@ export default {
     columns: Array,
     value: {required: true},
     multiple: Boolean,
+    radio: Boolean,
+    toggle: Boolean,
     simple: Boolean
   },
   data () {
-    return {}
+    return {
+      model: this.multiple && Array.isArray(this.value)
+        ? this.value.slice()
+        : this.value
+    }
   },
   watch: {
     '$refs.popover.showing' (v) {
@@ -168,6 +174,7 @@ export default {
         this.keyboardIndex = index
       }
     },
+    __onKeydown (e) {},
     __onFocus () {
       if (this.disable || this.focused) {
         return
@@ -242,6 +249,7 @@ export default {
       this.$emit('input', model)
     },
     __emit (value) {
+      console.log('Emit', value)
       this.$emit('input', value)
       this.$nextTick(() => {
         if (JSON.stringify(value) !== JSON.stringify(this.value)) {
@@ -263,6 +271,35 @@ export default {
   },
 
   render (h) {
+    let multipleOption = (opt) => {
+      return [
+        this.multiple
+          ? h(this.toggle ? UToggle : UCheckbox, {
+            // slot: this.toggle ? 'right' : 'left',
+            props: {
+              size: 'sm',
+              keepColor: true,
+              color: opt.color || this.color,
+              dark: this.dark,
+              value: this.optModel[opt.index],
+              disable: opt.disable,
+              noFocus: true
+            }
+          }) : (this.radio &&
+          h(URadio, {
+            slot: 'left',
+            props: {
+              keepColor: true,
+              color: opt.color || this.color,
+              dark: this.dark,
+              value: this.value,
+              val: opt.value,
+              disable: opt.disable,
+              noFocus: true
+            }
+          })) || void 0
+      ]
+    }
     return h(ErpInputFrame,
       {
         staticClass: 'erp-input erp-select',
@@ -295,7 +332,8 @@ export default {
         nativeOn: {
           click: this.__onClick,
           focus: this.__onFocus,
-          keydown: this.simple ? () => {} : this.__keyboardHandleKey
+          keydown: this.simple ? () => {
+          } : this.__keyboardHandleKey
         }
       }, [
         h('div', {staticClass: 'erp-if-select'}),
@@ -307,8 +345,10 @@ export default {
               input: this.__set,
               focus: this.__onFocus,
               blur: this.__onInputBlur,
-              keydown: this.simple ? () => {} : this.__onKeydown,
-              keyup: this.simple ? () => {} : this.__onKeyup
+              keydown: this.simple ? () => {
+              } : this.__onKeydown,
+              keyup: this.simple ? () => {
+              } : this.__onKeyup
               // animationstart: this.__onAnimationStart
             }
           }, this.options.map(opt => {
@@ -357,8 +397,7 @@ export default {
               nativeOn: {
                 keydown: this.__keyboardHandleKey
               }
-            }, [h(ErpSelectContainer, {
-            }, [h(ErpSelectTable, {
+            }, [h(ErpSelectContainer, {}, [h(ErpSelectTable, {
               ref: 'table',
               props: {
                 columns: this.columns
@@ -393,11 +432,11 @@ export default {
                 },
                 staticClass: 'erp-select-list-item'
               }, [
-                !this.columns ? h(ETd, opt.label) : this.columns.map((column) => {
+                !this.columns ? h(ETd, [opt.label].concat(multipleOption(opt))) : this.columns.map((column, columnIndex) => {
                   if (typeof opt[column.value] === 'undefined') {
                     console.error(`Column ${column.value} not exits in option value`)
                   }
-                  return h(ETd, opt[column.value])
+                  return h(ETd, [opt[column.value]].concat(columnIndex === 0 && multipleOption(opt)))
                 })
               ])
             }))])])

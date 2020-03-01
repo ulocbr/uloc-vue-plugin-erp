@@ -94,6 +94,7 @@ export default {
         input1: 'teste',
         select1: 2,
         select2: null,
+        selectMultiple: [],
         select2Options: [
           {label: 'Aplicativo iOS', value: 1, desc: 'Mobile iOS compatible test'},
           {label: 'Aplicativo Android', value: 2, desc: 'Android 8.2'},
@@ -495,6 +496,13 @@ export default {
       <div class="m-r" style="width: 200px; display: inline-block">
         <erp-select size="2" :options="forms.select2Options" v-model="forms.select2" />
         {{forms.select2}}
+      </div>
+
+      <p class="m-t"><small>Multiple Select</small></p>
+      <div class="m-r" style="width: 200px; display: inline-block">
+        <erp-select multiple placeholder="Selecione" :options="forms.select2Options" :columns="forms.select2Columns"
+                    v-model="forms.selectMultiple" />
+        {{forms.selectMultiple}}
       </div>
 
       <div style="height: 100px"></div>
