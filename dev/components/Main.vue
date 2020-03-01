@@ -510,7 +510,7 @@ export default {
                     v-model="forms.selectMultiple">
           <template v-slot:itemLabel="prop">
             <span v-if="prop.columnIndex === 0">
-              Opa!
+              {{prop}}
             </span>
             <span v-else>
               {{prop.label}}

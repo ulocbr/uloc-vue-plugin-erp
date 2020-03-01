@@ -25,7 +25,8 @@ export default {
     multiple: Boolean,
     radio: Boolean,
     toggle: Boolean,
-    simple: Boolean
+    simple: Boolean,
+    propoverClass: String
   },
   data () {
     return {
@@ -388,7 +389,7 @@ export default {
             h(UPopover, {
               ref: 'popover',
               staticClass: 'erp-select-popup',
-              'class': this.dark ? 'bg-dark' : null,
+              'class': [this.dark ? 'bg-dark' : null, this.propoverClass || null],
               props: {
                 fit: true,
                 disable: !this.editable,
