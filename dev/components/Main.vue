@@ -504,6 +504,22 @@ export default {
         {{forms.selectMultiple}}
       </div>
 
+      <p class="m-t"><small>Multiple Select Slot Item</small></p>
+      <div class="m-r" style="width: 200px; display: inline-block">
+        <erp-select multiple placeholder="Selecione" :options="forms.select2Options" :columns="forms.select2Columns"
+                    v-model="forms.selectMultiple">
+          <template v-slot:itemLabel="prop">
+            <span v-if="prop.columnIndex === 0">
+              Opa!
+            </span>
+            <span v-else>
+              {{prop.label}}
+            </span>
+          </template>
+        </erp-select>
+        {{forms.selectMultiple}}
+      </div>
+
       <div style="height: 100px"></div>
 
       <select>

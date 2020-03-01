@@ -174,7 +174,8 @@ export default {
         this.keyboardIndex = index
       }
     },
-    __onKeydown (e) {},
+    __onKeydown (e) {
+    },
     __onFocus () {
       if (this.disable || this.focused) {
         return
@@ -299,6 +300,11 @@ export default {
             }
           })) || void 0
       ]
+    }
+
+    let renderItemLabel = (lbl, opt, columnIndex) => {
+      columnIndex = typeof columnIndex !== 'number' ? 0 : columnIndex
+      return this.$scopedSlots.itemLabel ? this.$scopedSlots.itemLabel({opt: opt, label: lbl, columnIndex: columnIndex}) : h('span', lbl)
     }
     return h(ErpInputFrame,
       {
@@ -432,11 +438,11 @@ export default {
                 },
                 staticClass: 'erp-select-list-item'
               }, [
-                !this.columns ? h(ETd, [multipleOption(opt)].concat([h('span', opt.label)])) : this.columns.map((column, columnIndex) => {
+                !this.columns ? h(ETd, [multipleOption(opt)].concat([renderItemLabel(opt.label, opt)])) : this.columns.map((column, columnIndex) => {
                   if (typeof opt[column.value] === 'undefined') {
                     console.error(`Column ${column.value} not exits in option value`)
                   }
-                  return h(ETd, [columnIndex === 0 && multipleOption(opt)].concat([h('span', opt[column.value])]))
+                  return h(ETd, [columnIndex === 0 && multipleOption(opt)].concat([renderItemLabel(opt[column.value], opt, columnIndex)]))
                 })
               ])
             }))])])
