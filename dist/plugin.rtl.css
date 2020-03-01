@@ -906,6 +906,10 @@ div.u-input-target {
 .erp-select .erp-select-input {
   -webkit-appearance: none;
   -moz-appearance: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 [dir] .erp-select .erp-select-input {
   background: none;
@@ -1022,6 +1026,9 @@ div.u-input-target {
   border-top: #dadada 1px solid;
   border-bottom: #dadada 1px solid;
   background-color: #f0f1f3;
+}
+.erp-select-list .erp-select-list-item.item-selected td {
+  font-weight: bold;
 }
 .erp-select-table {
   position: relative;

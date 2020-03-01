@@ -370,6 +370,7 @@ export default {
                 'class': [
                   opt.disable ? 'text-faded' : 'cursor-pointer',
                   index === this.keyboardIndex ? 'select-highlight' : '',
+                  opt.value === this.value ? 'item-selected' : '',
                   opt.className || ''
                 ],
                 domProps: {
