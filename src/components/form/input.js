@@ -1,6 +1,5 @@
 /**
- * TODO LIST:
- * [ ] Shortkey to focus input
+ * TOD@ LIST:
  */
 import FrameMixin from './mixins/input-frame.js'
 import InputMixin from './mixins/input.js'
