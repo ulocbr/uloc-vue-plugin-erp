@@ -674,11 +674,11 @@ html[dir], [dir] body {
 }
 [dir=ltr] .erp-if-control-before {
   margin-left: 4px;
-  margin-right: 0px;
+  margin-right: 0px !important;
 }
 [dir=rtl] .erp-if-control-before {
   margin-right: 4px;
-  margin-left: 0px;
+  margin-left: 0px !important;
 }
 .erp-if-label,
 .erp-if-addon,
