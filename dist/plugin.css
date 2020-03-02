@@ -423,6 +423,10 @@ body {
   color: inherit;
   vertical-align: middle;
 }
+.erp-input .erp-if-control {
+  margin-left: 4px;
+  margin-right: 4px;
+}
 .erp-if,
 .erp-if:before,
 .erp-if:after,

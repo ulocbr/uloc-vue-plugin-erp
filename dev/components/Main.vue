@@ -9,7 +9,7 @@ import ETd from '../../src/components/table/ETd'
 import ETableFooter from '../../src/components/table/ETableFooter'
 import ETableFooterResult from '../../src/components/table/ETableFooterResult'
 import EBtnCircleStatus from '../../src/components/button/EBtnCircleStatus'
-import {UTable} from 'uloc-vue'
+import {UTable, UDatetimePicker} from 'uloc-vue'
 import EBtnTableOptions from '../../src/components/button/EBtnTableOption'
 import ErpInput from '../../src/components/form/input'
 import ErpSField from '../../src/components/form/SimpleField'
@@ -109,7 +109,8 @@ export default {
         select2Columns: [
           {label: 'Descrição', value: 'label'},
           {label: 'Detalhes', value: 'desc'}
-        ]
+        ],
+        date1: null
       }
     }
   },
@@ -206,7 +207,8 @@ export default {
     ETr,
     EWindowTable,
     EBtn,
-    UTable
+    UTable,
+    UDatetimePicker
   }
 }
 </script>
@@ -522,10 +524,8 @@ export default {
 
       <div style="height: 100px"></div>
 
-      <select>
-        <option>Opt 1</option>
-        <option>Opt 2</option>
-      </select>
+      {{forms.date1}}
+      <u-datetime-picker v-model="forms.date1" type="date" />
 
     </div>
   </div>

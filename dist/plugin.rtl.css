@@ -553,6 +553,14 @@ html[dir], [dir] body {
 [dir] .erp-input input, [dir] .erp-input select {
   padding: 2px 6px 0;
 }
+[dir=ltr] .erp-input .erp-if-control {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+[dir=rtl] .erp-input .erp-if-control {
+  margin-right: 4px;
+  margin-left: 4px;
+}
 .erp-if,
 .erp-if:before,
 .erp-if:after,

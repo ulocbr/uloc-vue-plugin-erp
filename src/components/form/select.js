@@ -37,7 +37,6 @@ export default {
   },
   watch: {
     '$refs.popover.showing' (v) {
-      console.log('Mostrou', v)
       v && this.$refs.table.adjustPosition()
     }
   },
@@ -251,7 +250,6 @@ export default {
       this.$emit('input', model)
     },
     __emit (value) {
-      console.log('Emit', value)
       this.$emit('input', value)
       this.$nextTick(() => {
         if (JSON.stringify(value) !== JSON.stringify(this.value)) {
