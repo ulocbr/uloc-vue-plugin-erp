@@ -610,7 +610,7 @@ div.u-input-target {
 .erp-s-field .erp-s-field-label.no-label {
   display: none !important;
 }
-.erp-s-field .erp-s-field-label.wrap {
+.erp-s-field .erp-s-field-label.label-wrap {
   white-space: normal !important;
 }
 .erp-s-field .erp-s-field-content {
@@ -660,7 +660,7 @@ div.u-input-target {
   display: flex;
   align-self: center;
 }
-.erp-s-field.erp-field-layout-left .erp-s-field-label.wrap {
+.erp-s-field.erp-field-layout-left .erp-s-field-label.label-wrap {
   white-space: normal !important;
 }
 .erp-s-field.erp-field-layout-left .erp-s-field-content {
