@@ -402,6 +402,7 @@ export default {
             view="ll"
             label="Label Left"
             helper="Some helper"
+            no-label
           >
             <erp-input v-model="forms.input1" />
           </erp-s-field>

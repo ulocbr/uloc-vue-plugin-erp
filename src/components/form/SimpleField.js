@@ -17,7 +17,8 @@ export default {
       type: String,
       default: 'lt',
       validator: v => /^(l|r)(t|b)$/.test(v.toLowerCase())
-    }
+    },
+    noLabel: Boolean
   },
   data () {
     return {}
@@ -63,6 +64,7 @@ export default {
     }, [
       h('div', {
         staticClass: 'erp-s-field-label',
+        class: {'no-label': this.noLabel},
         style: labelStyle
       }, this.label),
       h('div', {

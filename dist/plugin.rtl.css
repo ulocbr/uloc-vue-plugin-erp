@@ -786,6 +786,9 @@ div.u-input-target {
       -ms-user-select: none;
           user-select: none;
 }
+.erp-s-field .erp-s-field-label.no-label {
+  display: none !important;
+}
 .erp-s-field .erp-s-field-content {
   position: relative;
 }
