@@ -18,7 +18,8 @@ export default {
       default: 'lt',
       validator: v => /^(l|r)(t|b)$/.test(v.toLowerCase())
     },
-    noLabel: Boolean
+    noLabel: Boolean,
+    wrap: Boolean
   },
   data () {
     return {}
@@ -64,7 +65,7 @@ export default {
     }, [
       h('div', {
         staticClass: 'erp-s-field-label',
-        class: {'no-label': this.noLabel},
+        class: {'no-label': this.noLabel, 'label-wrap': this.wrap},
         style: labelStyle
       }, this.label),
       h('div', {
