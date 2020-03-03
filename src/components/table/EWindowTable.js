@@ -18,7 +18,7 @@ export default {
           })
         ]),
         h('tbody', this.$slots.default)
-      ])
+      ]), this.$slots.footer || void (0)
     ])
   }
 }

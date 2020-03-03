@@ -8,7 +8,7 @@ export default {
   },
   components: {},
   mounted () {
-    this.$parent.$el.append(this.$el)
+    // this.$parent.$el.append(this.$el)
   },
   computed: {
     computedClass () {

@@ -256,7 +256,7 @@ export default {
             </e-td>
             <e-td><a><i class="erp-icon search min"></i> </a></e-td>
           </e-tr>
-          <e-table-footer class="flex flex-center">
+          <e-table-footer slot="footer" class="flex flex-center">
             <e-table-footer-result class="m-r text-right">Total de remoções = 1</e-table-footer-result>
             <e-table-footer-result class="m-r text-right">Total de remoções = 1</e-table-footer-result>
             <e-table-footer-result class="text-right">Total de remoções = 1</e-table-footer-result>
