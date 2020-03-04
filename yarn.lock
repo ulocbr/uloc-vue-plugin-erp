@@ -8539,11 +8539,11 @@ uloc-vue-auth@ulocbr/uloc-vue-auth#master:
   dependencies:
     axios "^0.18.1"
     moment "^2.22.2"
-    uloc-vue ulocbr/uloc-vue#master
+    uloc-vue "github:ulocbr/uloc-vue"
 
 uloc-vue@ulocbr/uloc-vue#master:
   version "0.0.1"
-  resolved "https://codeload.github.com/ulocbr/uloc-vue/tar.gz/0d852d01a6f91a61971bfa13b423d79ab9d0e54a"
+  resolved "https://codeload.github.com/ulocbr/uloc-vue/tar.gz/c05323c61b6f1274f77c1fc2ad514742a095dcb0"
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
