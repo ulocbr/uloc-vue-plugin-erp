@@ -215,7 +215,7 @@ export default {
                 totalRows: 100,
                 totalPages: 5,
                 data: [
-                  {id: 1, descricao: 'Bem 01'},
+                  {id: 1, descricao: 'Bem 01', tipo: {id: 1, nome: 'Tiago'}},
                   {id: 2, descricao: 'Bem 02'},
                   {id: 3, descricao: 'Bem 03'},
                   {id: 4, descricao: 'Bem 04'},

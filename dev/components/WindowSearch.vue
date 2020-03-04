@@ -2,7 +2,8 @@
   <div class="col-grow flex justify-between h-full bg-white">
     <window-search @selected="selected" :fetch-data="fetchData" :columns="[
     {label: 'ID', value: 'id'},
-    {label: 'Descrição do bem', value: 'descricao'}
+    {label: 'Descrição do bem', value: 'descricao'},
+    {label: 'Tipo', value: 'tipo'}
   ]">
     </window-search>
   </div>
