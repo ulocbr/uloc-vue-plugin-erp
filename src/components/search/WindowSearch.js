@@ -5,9 +5,11 @@ import ErpInput from '../form/input.js'
 import ErpSField from '../form/SimpleField'
 import WindowFooter from '../window/Footer.js'
 import {event, UBtn, UProgress, debounce} from 'uloc-vue'
+import SelectKeyboard from '../form/mixins/select-keyboard.js'
 
 export default {
   name: 'WindowSearch',
+  mixins: [SelectKeyboard],
   props: {
     tableClass: {
       default: 'col-grow h-full'
@@ -35,16 +37,23 @@ export default {
     return {
       search: null,
       loading: false,
+      model: null,
       serverPagination: {
         page: 1,
         rowsNumber: 0,
         rowsPerPage: 20
       },
-      data: []
+      data: [],
+      keyboardIndex: 0,
+      keyboardMoveDirection: false,
+      keyboardMoveTimer: false
     }
   },
   components: {},
   computed: {
+    visibleOptions () {
+      return this.data
+    },
     computedClass () {
       return {}
     },
@@ -62,6 +71,9 @@ export default {
         return true
       }
       return this.serverPagination.page >= this.pagesNumber
+    },
+    keyboardMaxIndex () {
+      return this.visibleOptions.length - 1
     }
   },
   watch: {
@@ -75,6 +87,32 @@ export default {
       this.$nextTick(() => {
         this.load()
       })
+    },
+    keyboardIndex (val) {
+      if (this.keyboardMoveDirection && val > -1) {
+        this.$nextTick(() => {
+          const selected = this.$el.querySelector('.select-highlight')
+          if (typeof selected.dataIndex === 'number') {
+            if (selected.dataIndex <= 0) {
+              // Verifica se existe thead
+              let thead = this.$el.querySelector('.erp-select-thead:not(.thead-helper-header)')
+              if (thead && thead.scrollIntoView) {
+                if (thead.scrollIntoViewIfNeeded) {
+                  return thead.scrollIntoViewIfNeeded(false)
+                }
+                thead.scrollIntoView(this.keyboardMoveDirection < 0)
+              }
+              return
+            }
+          }
+          if (selected && selected.scrollIntoView) {
+            if (selected.scrollIntoViewIfNeeded) {
+              return selected.scrollIntoViewIfNeeded(false)
+            }
+            selected.scrollIntoView(this.keyboardMoveDirection < 0)
+          }
+        })
+      }
     }
   },
   methods: {
@@ -93,8 +131,8 @@ export default {
     load: debounce(function () {
       this.loading = true
 
-      let filters = []
-      filters.push({page: this.serverPagination.page})
+      let filters = {}
+      filters.page = this.serverPagination.page
 
       this.fetchData(this.search || '', filters, (data, pagination) => {
         this.data = data
@@ -111,7 +149,118 @@ export default {
         }
         this.loading = false
       })
-    }, 300)
+    }, 300),
+    __keyboardCalcIndex () {
+      this.keyboardIndex = -1
+      const sel = [this.model]
+      this.$nextTick(() => {
+        const index = sel === void 0 ? -1 : Math.max(-1, this.visibleOptions.findIndex((opt, index) => sel.includes(index)))
+        if (index > -1) {
+          this.keyboardMoveDirection = true
+          setTimeout(() => {
+            this.keyboardMoveDirection = false
+          }, 1)
+          this.__keyboardShow(index)
+        }
+      })
+    },
+    __keyboardCustomKeyHandle (key, e) {
+      switch (key) {
+        case 13: // ENTER key
+        case 32: // SPACE key
+          console.log('Select item')
+          break
+      }
+    },
+    __keyboardShowTrigger () {
+      // this.show()
+      console.log('Show Trigger')
+    },
+    __keyboardSetSelection (index) {
+      const opt = this.visibleOptions[index]
+
+      this.__singleSelect(opt)
+    },
+    __keyboardIsSelectableIndex (index) {
+      return index > -1 && index < this.visibleOptions.length && !this.visibleOptions[index].disable
+    },
+    __mouseEnterHandler (e, index) {
+      if (!this.keyboardMoveDirection) {
+        this.keyboardIndex = index
+      }
+    },
+    __keyboardShow (index = 0) {
+      if (this.keyboardIndex !== index) {
+        this.keyboardIndex = index
+      }
+    },
+    __keyboardSetCurrentSelection (navigation) {
+      if (this.keyboardIndex >= 0 && this.keyboardIndex <= this.keyboardMaxIndex) {
+        this.__keyboardSetSelection(this.keyboardIndex, navigation)
+      }
+    },
+    __keyboardHandleKey (e) {
+      const key = event.getEventKey(e)
+
+      console.log('KEY')
+
+      switch (key) {
+        case 38: // UP key
+          this.__keyboardMoveCursor(-1, e)
+          break
+        case 40: // DOWN key
+          this.__keyboardMoveCursor(1, e)
+          break
+        case 13: // ENTER key
+        case 32: // SPACE key
+          event.stopAndPrevent(e)
+          this.__keyboardSetCurrentSelection()
+          break
+        case 9: // TAB key
+          this.hide()
+          break
+      }
+
+      this.__keyboardCustomKeyHandle(key, e)
+    },
+    __keyboardMoveCursor (offset, e) {
+      event.stopAndPrevent(e)
+
+      clearTimeout(this.keyboardMoveTimer)
+      let
+        index = this.keyboardIndex // ,
+      // valid = this.__keyboardIsSelectableIndex || (() => true)
+
+      /* do {
+        index = normalizeToInterval(
+          index + offset,
+          -1,
+          this.keyboardMaxIndex
+        )
+      }
+      while (index !== this.keyboardIndex && !valid(index)) */
+      // Removi as linhas acima para desativar o loop infinito utilizando as seteas cima e baixo do teclado.
+      index = index === -1 ? 0 : (index + offset)
+      if (index > this.keyboardMaxIndex) {
+        index = this.keyboardMaxIndex
+      } else if (index === -1) {
+        index = 0
+      } else {
+      }
+
+      this.keyboardMoveDirection = index > this.keyboardIndex ? 1 : -1
+      this.keyboardMoveTimer = setTimeout(() => {
+        this.keyboardMoveDirection = false
+      }, 500)
+      this.keyboardIndex = index
+    },
+    __singleSelect (val, disable) {
+      if (disable) {
+        return
+      }
+      this.$emit('selected', val)
+      // this.__emit(val)
+    }
   },
   mounted () {
     this.load()
@@ -131,7 +280,14 @@ export default {
         ])
       ]))
     }
-    return h('div', {staticClass: 'erp-w-search erp-w-content', class: this.computedClass},
+    return h('div',
+      {
+        staticClass: 'erp-w-search erp-w-content',
+        class: this.computedClass,
+        on: {
+          keydown: this.__keyboardHandleKey
+        }
+      },
       [
         h('div', {staticClass: 'erp-w-search-input erp-w-content-header wrapper'}, [
           h(ErpSField, {
@@ -160,8 +316,29 @@ export default {
         h(EWindowTable, {
           staticClass: this.tableClass,
           props: {columns: this.columns.map(c => c.label)}
-        }, child.concat(this.data.map((data) => {
-          return h(ETr, {staticClass: ''}, this.columns.map((c) => {
+        }, child.concat(this.data.map((data, index) => {
+          return h(ETr, {
+            key: index,
+            'class': [
+              data.disable ? 'text-faded' : 'cursor-pointer',
+              index === this.keyboardIndex ? 'select-highlight' : '',
+              index === this.model ? 'item-selected' : '',
+              data.className || ''
+            ],
+            domProps: {
+              dataIndex: index
+            },
+            nativeOn: {
+              '!click': () => {
+                const action = this.multiple ? '__toggleMultiple' : '__singleSelect'
+                this[action](data)
+              },
+              mouseenter: e => {
+                !data.disable && this.__mouseEnterHandler(e, index)
+              }
+            },
+            staticClass: 'erp-select-list-item'
+          }, this.columns.map((c) => {
             return h(ETd, {staticClass: ''}, data[c.value])
           }))
         }))),

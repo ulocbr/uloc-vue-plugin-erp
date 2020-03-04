@@ -853,6 +853,22 @@ div.u-input-target {
 .erp-select-table th:first-child {
   padding-left: 4px;
 }
+.erp-w-search {
+  width: 100%;
+}
+.erp-w-search .erp-w-table {
+  overflow: auto;
+}
+.erp-w-search .erp-w-table table tr td {
+  height: auto;
+  padding: 8px 6px;
+  cursor: pointer;
+}
+.erp-w-search .erp-w-table table tr:hover td,
+.erp-w-search .erp-w-table table tr.select-highlight td {
+  background-color: #6495ed;
+  color: #fff;
+}
 .erp-w-table {
   width: 100%;
   border: #b5b7bf 1px solid;

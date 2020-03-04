@@ -1151,6 +1151,26 @@ div.u-input-target {
 [dir=rtl] .erp-select-table th:first-child {
   padding-right: 4px;
 }
+.erp-w-search {
+  width: 100%;
+}
+.erp-w-search .erp-w-table {
+  overflow: auto;
+}
+.erp-w-search .erp-w-table table tr td {
+  height: auto;
+}
+[dir] .erp-w-search .erp-w-table table tr td {
+  padding: 8px 6px;
+  cursor: pointer;
+}
+.erp-w-search .erp-w-table table tr:hover td,
+.erp-w-search .erp-w-table table tr.select-highlight td {
+  color: #fff;
+}
+[dir] .erp-w-search .erp-w-table table tr:hover td, [dir] .erp-w-search .erp-w-table table tr.select-highlight td {
+  background-color: #6495ed;
+}
 .erp-w-table {
   width: 100%;
   display: flex;

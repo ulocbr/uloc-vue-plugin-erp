@@ -12,7 +12,7 @@ export default {
   render (h) {
     return h('div', {staticClass: 'erp-w-table', class: this.computedClass}, [
       h('table', [
-        h('thead', [
+        h('thead', {staticClass: 'erp-select-thead'}, [
           this.columns.map((item) => {
             return h('th', typeof item === 'object' ? item.label : item)
           })

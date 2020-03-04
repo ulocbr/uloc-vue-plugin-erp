@@ -272,6 +272,11 @@ export default {
         }
       }, () => import('../components/WindowSearch.vue'))
         .then((wid) => {
+          this.$uloc.window.listen(wid, {
+            selected: (wid, val) => {
+              console.log('Selecionado com sucesso: ', val)
+            }
+          })
           console.log(wid)
         }) // return wid
     }
