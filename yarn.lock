@@ -8541,7 +8541,7 @@ uloc-vue-auth@ulocbr/uloc-vue-auth#master:
     moment "^2.22.2"
     uloc-vue "github:ulocbr/uloc-vue"
 
-uloc-vue@ulocbr/uloc-vue#master:
+"uloc-vue@github:ulocbr/uloc-vue", uloc-vue@ulocbr/uloc-vue#master:
   version "0.0.1"
   resolved "https://codeload.github.com/ulocbr/uloc-vue/tar.gz/c05323c61b6f1274f77c1fc2ad514742a095dcb0"
 
