@@ -9,7 +9,7 @@ import ETd from '../../src/components/table/ETd'
 import ETableFooter from '../../src/components/table/ETableFooter'
 import ETableFooterResult from '../../src/components/table/ETableFooterResult'
 import EBtnCircleStatus from '../../src/components/button/EBtnCircleStatus'
-import {UTable, UDatetimePicker} from 'uloc-vue'
+import {UTable} from 'uloc-vue'
 import EBtnTableOptions from '../../src/components/button/EBtnTableOption'
 import ErpInput from '../../src/components/form/input'
 import ErpSField from '../../src/components/form/SimpleField'
@@ -110,7 +110,8 @@ export default {
           {label: 'Descrição', value: 'label'},
           {label: 'Detalhes', value: 'desc'}
         ],
-        date1: null
+        date1: null,
+        windowSearch: null
       }
     }
   },
@@ -192,6 +193,87 @@ export default {
         .then((wid) => {
           console.log(wid)
         }) // return wid
+    },
+    openWindowSearch () {
+      console.log('click window search test...')
+      let window = 'windowSearch'
+      !this.$uloc.window.get(window) && this.$uloc.window.new({
+        wid: window,
+        title: 'Buscar Bem',
+        width: '800',
+        height: '600',
+        minHeight: '500',
+        backdrop: true,
+        clickOutside: false,
+        windowClass: 'erp-window',
+        contentClass: 'overflow-hidden bg-white',
+        props: {
+          fetchData: (terms, filters, done) => {
+            console.log('Buscando dados: ', terms, filters, done)
+            setTimeout(() => {
+              let response = {
+                totalRows: 100,
+                totalPages: 5,
+                data: [
+                  {id: 1, descricao: 'Bem 01'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 3, descricao: 'Bem 03'},
+                  {id: 4, descricao: 'Bem 04'},
+                  {id: 5, descricao: 'Bem 05'},
+                  {id: 6, descricao: 'Bem 06'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'},
+                  {id: 2, descricao: 'Bem 02'}
+                ]
+              }
+
+              let filter = function (terms, {field, list}) {
+                const token = terms.toLowerCase()
+                return list.filter(item => ('' + item[field]).toLowerCase().includes(token))
+              }
+
+              let filteredData = filter(terms, {field: 'descricao', list: response.data})
+
+              done(filteredData, {
+                page: filters.page,
+                rowsNumber: filteredData.length, // response.totalRows,
+                rowsPerPage: 20
+              })
+            }, 1000)
+          }
+        }
+      }, () => import('../components/WindowSearch.vue'))
+        .then((wid) => {
+          console.log(wid)
+        }) // return wid
     }
   },
   components: {
@@ -207,8 +289,7 @@ export default {
     ETr,
     EWindowTable,
     EBtn,
-    UTable,
-    UDatetimePicker
+    UTable
   }
 }
 </script>
@@ -523,10 +604,13 @@ export default {
         {{forms.selectMultiple}}
       </div>
 
-      <div style="height: 100px"></div>
+      <p class="m-t"><small>Window Search</small></p>
+      <div class="m-r" style="width: 200px; display: inline-block">
+        {{forms.windowSearch}}
+        <e-btn md label="Buscar bem" @click="openWindowSearch"></e-btn>
+      </div>
 
-      {{forms.date1}}
-      <u-datetime-picker v-model="forms.date1" type="date" />
+      <div style="height: 100px"></div>
 
     </div>
   </div>
