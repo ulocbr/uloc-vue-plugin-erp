@@ -167,7 +167,7 @@ export default {
     __keyboardCustomKeyHandle (key, e) {
       switch (key) {
         case 13: // ENTER key
-        case 32: // SPACE key
+        // case 32: // SPACE key
           console.log('Select item')
           break
       }
@@ -212,7 +212,7 @@ export default {
           this.__keyboardMoveCursor(1, e)
           break
         case 13: // ENTER key
-        case 32: // SPACE key
+        // case 32: // SPACE key
           event.stopAndPrevent(e)
           this.__keyboardSetCurrentSelection()
           break

@@ -275,6 +275,7 @@ export default {
           this.$uloc.window.listen(wid, {
             selected: (wid, val) => {
               console.log('Selecionado com sucesso: ', val)
+              this.forms.windowSearch = val
             }
           })
           console.log(wid)
