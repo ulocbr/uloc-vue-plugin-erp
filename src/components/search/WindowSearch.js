@@ -339,7 +339,7 @@ export default {
             },
             staticClass: 'erp-select-list-item'
           }, this.columns.map((c) => {
-            return h(ETd, {staticClass: ''}, [typeof c.value === 'function' ? c.value(data) : (typeof data === 'object' ? JSON.stringify(data[c.value]) : data[c.value])])
+            return h(ETd, {staticClass: ''}, [typeof c.value === 'function' ? c.value(data) : (typeof data[c.value] === 'object' ? JSON.stringify(data[c.value]) : data[c.value])])
           }))
         }))),
         h(WindowFooter, {staticClass: 'wrapper'}, [
