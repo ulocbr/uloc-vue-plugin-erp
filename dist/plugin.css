@@ -1,5 +1,5 @@
 /*
- * ERP Layout Plugin v0.0.2
+ * ERP Layout Plugin v0.0.3
  * Uloc Framework
  * (c) 2020-present Tiago Felipe
  * Released under the MIT License.
@@ -23,7 +23,7 @@ body {
   flex-direction: column;
 }
 .u-erp-layout-container {
-  background-color: #f0eef0;
+  background-color: #f0f0f0;
   flex: 1;
   overflow: auto;
   display: flex;
