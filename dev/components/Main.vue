@@ -15,6 +15,7 @@ import ErpInput from '../../src/components/form/input'
 import ErpSField from '../../src/components/form/SimpleField'
 import HelperInputBtn from '../../src/components/form/helpers/HelperInputBtn'
 import ErpSelect from '../../src/components/form/select'
+import ErpLabel from '../../src/components/form/ErpLabel'
 
 export default {
   inject: {
@@ -283,6 +284,7 @@ export default {
     }
   },
   components: {
+    ErpLabel,
     ErpSelect,
     HelperInputBtn,
     ErpSField,
@@ -614,6 +616,13 @@ export default {
       <div class="m-r" style="width: 200px; display: inline-block">
         {{forms.windowSearch}}
         <e-btn md label="Buscar bem" @click="openWindowSearch"></e-btn>
+      </div>
+
+      <p class="m-t"><small>Label</small></p>
+      <div class="m-r" style="width: 400px; display: inline-block">
+        <erp-label label="Label title" label-view="tl">
+          Algo aqui...
+        </erp-label>
       </div>
 
       <div style="height: 100px"></div>

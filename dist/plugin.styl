@@ -1,5 +1,5 @@
 /*!
- * ERP Layout Plugin v0.0.4
+ * ERP Layout Plugin v0.0.5
  * Uloc Framework
  * (c) 2020-present Tiago Felipe
  * Released under the MIT License.
@@ -848,6 +848,65 @@ div.u-input-target
     background: linear-gradient(180deg, rgba(248, 248, 249, 1) 0%, rgba(242, 243, 244, 1) 100%);
     &:first-child {
       padding-left 4px
+    }
+  }
+}
+.erp-label {
+  border: #707070 1px solid
+  padding 16px 20px
+  width 100%
+  display block
+  position relative
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);
+  z-index 1
+  font-size 11px
+  &::after {
+    content ''
+    position absolute
+    left 0
+    top 0
+    bottom 0
+    width 100%
+    border #ECECEC 1px solid
+  }
+  .label-title {
+    display flex
+    position absolute
+    height 20px
+    background-color #F5F5F5 
+    font-size 11px
+    padding 0 4px
+    align-items center
+    line-height 20px
+    user-select none
+    font-weight 600
+    text-shadow 1px 1px #FFFFFF
+    z-index 2
+    color #333333
+  }
+  &.erp-label-layout-top {
+    .label-title {
+      top -11px
+    }
+  }
+  &.erp-label-layout-bottom {
+    -webkit-box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.16);
+    .label-title {
+      bottom -11px
+    }
+  }
+  &.erp-label-align-left {
+    .label-title {
+      left 26px
+    }
+  }
+  &.erp-label-align-right {
+    .label-title {
+      right 26px
     }
   }
 }

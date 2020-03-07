@@ -1,6 +1,6 @@
 {
   "name": "uloc-vue-plugin-erp",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Provide ERP Layout and Features for Uloc Vue Framework",
   "module": "src/index.esm.js",
   "main": "dist/index.common.js",

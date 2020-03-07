@@ -1,5 +1,5 @@
 /*
- * ERP Layout Plugin v0.0.4
+ * ERP Layout Plugin v0.0.5
  * Uloc Framework
  * (c) 2020-present Tiago Felipe
  * Released under the MIT License.
@@ -852,6 +852,58 @@ div.u-input-target {
 }
 .erp-select-table th:first-child {
   padding-left: 4px;
+}
+.erp-label {
+  border: #707070 1px solid;
+  padding: 16px 20px;
+  width: 100%;
+  display: block;
+  position: relative;
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.16);
+  z-index: 1;
+  font-size: 11px;
+}
+.erp-label::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  border: #ececec 1px solid;
+}
+.erp-label .label-title {
+  display: flex;
+  position: absolute;
+  height: 20px;
+  background-color: #f5f5f5;
+  font-size: 11px;
+  padding: 0 4px;
+  align-items: center;
+  line-height: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-weight: 600;
+  text-shadow: 1px 1px #fff;
+  z-index: 2;
+  color: #333;
+}
+.erp-label.erp-label-layout-top .label-title {
+  top: -11px;
+}
+.erp-label.erp-label-layout-bottom {
+  box-shadow: 0px -2px 2px 0px rgba(0,0,0,0.16);
+}
+.erp-label.erp-label-layout-bottom .label-title {
+  bottom: -11px;
+}
+.erp-label.erp-label-align-left .label-title {
+  left: 26px;
+}
+.erp-label.erp-label-align-right .label-title {
+  right: 26px;
 }
 .erp-w-search {
   width: 100%;
