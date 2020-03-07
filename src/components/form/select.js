@@ -64,12 +64,15 @@ export default {
         ? defaultFilterFn
         : this.filter
     },
+    selectedOption () {
+      return this.options.find(opt => opt.value === this.model)
+    },
     actualValue () {
       if (this.displayValue) {
         return this.displayValue
       }
       if (!this.multiple) {
-        const opt = this.options.find(opt => opt.value === this.model)
+        const opt = this.selectedOption
         return opt ? opt.label : ''
       }
 
@@ -93,6 +96,36 @@ export default {
     },
     additionalLength () {
       return this.displayValue && this.displayValue.length > 0
+    },
+    selectedInputStyle () {
+      let style = {
+        color: null,
+        class: null
+      }
+      if (this.multiple) {
+        return style
+      }
+      const opt = this.selectedOption
+      if (opt) {
+        if (opt.color) {
+          style.color = opt.color
+        }
+        if (opt.class) {
+          style.class = opt.class
+        }
+      }
+      return style
+    },
+    inputClass () {
+      let css = []
+      let inputStyle = this.selectedInputStyle
+      if (inputStyle.color) {
+        css.push(`text-${inputStyle.color}`)
+      }
+      if (inputStyle.class) {
+        css.push(inputStyle.class)
+      }
+      return css
     }
   },
   methods: {
@@ -303,7 +336,11 @@ export default {
 
     let renderItemLabel = (lbl, opt, columnIndex) => {
       columnIndex = typeof columnIndex !== 'number' ? 0 : columnIndex
-      return this.$scopedSlots.itemLabel ? this.$scopedSlots.itemLabel({opt: opt, label: lbl, columnIndex: columnIndex}) : h('span', lbl)
+      return this.$scopedSlots.itemLabel ? this.$scopedSlots.itemLabel({
+        opt: opt,
+        label: lbl,
+        columnIndex: columnIndex
+      }) : h('span', lbl)
     }
     return h(ErpInputFrame,
       {
@@ -368,6 +405,7 @@ export default {
             h('input', {
               ref: 'input',
               staticClass: 'erp-select-input col',
+              class: this.inputClass,
               attrs: {
                 readonly: true
               },

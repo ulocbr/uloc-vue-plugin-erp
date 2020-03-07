@@ -102,7 +102,7 @@ export default {
           {label: 'Híbrido', value: 4, desc: 'All platforms'},
           {label: 'Windows', value: 5, desc: 'Windows 10 Professional'},
           {label: 'Linux', value: 6, desc: 'Ubuntu or Centos'},
-          {label: 'MacOS', value: 7, desc: 'Last version'},
+          {label: 'MacOS', value: 7, desc: 'Last version', color: 'positive', class: 'font-bold'},
           {label: 'MicroTik', value: 8, desc: 'n/d'},
           {label: 'N/d', value: 9, desc: 'Other choices'}
         ],
