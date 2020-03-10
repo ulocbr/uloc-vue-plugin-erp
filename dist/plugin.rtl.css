@@ -1,5 +1,5 @@
 /*
- * ERP Layout Plugin v0.0.5
+ * ERP Layout Plugin v0.0.6
  * Uloc Framework
  * (c) 2020-present Tiago Felipe
  * Released under the MIT License.
@@ -1169,6 +1169,7 @@ div.u-input-target {
   top: 0;
   bottom: 0;
   width: 100%;
+  pointer-events: none;
 }
 [dir] .erp-label::after {
   border: #ececec 1px solid;
