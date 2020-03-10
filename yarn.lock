@@ -8541,13 +8541,9 @@ uloc-vue-auth@ulocbr/uloc-vue-auth#master:
     moment "^2.22.2"
     uloc-vue ulocbr/uloc-vue#master
 
-"uloc-vue@github:ulocbr/uloc-vue":
-  version "0.0.1"
-  resolved "https://codeload.github.com/ulocbr/uloc-vue/tar.gz/c05323c61b6f1274f77c1fc2ad514742a095dcb0"
-
 uloc-vue@ulocbr/uloc-vue#master:
-  version "0.0.2"
-  resolved "https://codeload.github.com/ulocbr/uloc-vue/tar.gz/2ca735c0a6f62465d72a81db51822ef157e5d589"
+  version "0.0.3"
+  resolved "https://codeload.github.com/ulocbr/uloc-vue/tar.gz/6a3168d96c740096f5c552dfab38dec65f5975fc"
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
