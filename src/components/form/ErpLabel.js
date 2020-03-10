@@ -6,6 +6,9 @@ export default {
       type: String,
       default: 'tl',
       validator: v => /^(t|b)(l|r)$/.test(v.toLowerCase())
+    },
+    tag: {
+      default: 'label'
     }
   },
   computed: {
@@ -28,7 +31,7 @@ export default {
     }
   },
   render (h) {
-    return h('label', {
+    return h(this.tag, {
       staticClass: 'erp-label',
       class: this.classes
     }, [this.label && h('div', {staticClass: 'label-title'}, this.label)].concat(this.$slots.default))
