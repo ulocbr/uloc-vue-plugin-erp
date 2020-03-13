@@ -378,7 +378,7 @@ export default {
           } : this.__keyboardHandleKey
         }
       }, [
-        h('div', {staticClass: 'erp-if-select'}),
+        h('div', {class: {'erp-if-select': !this.isLoading}}),
         this.simple ? h('select',
           {
             ref: 'input',
