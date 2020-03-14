@@ -16,6 +16,7 @@ import ErpSField from '../../src/components/form/SimpleField'
 import HelperInputBtn from '../../src/components/form/helpers/HelperInputBtn'
 import ErpSelect from '../../src/components/form/select'
 import ErpLabel from '../../src/components/form/ErpLabel'
+import ErpBox from '../../src/components/boxes/Box'
 
 export default {
   inject: {
@@ -284,6 +285,7 @@ export default {
     }
   },
   components: {
+    ErpBox,
     ErpLabel,
     ErpSelect,
     HelperInputBtn,
@@ -626,6 +628,13 @@ export default {
       </div>
 
       <div style="height: 100px"></div>
+
+      <p class="m-t"><small>Boxes</small></p>
+      <div class="m-r" style="width: 216px; display: inline-block">
+        <erp-box label="Imagem / Foto principal">
+          <div>...</div>
+        </erp-box>
+      </div>
 
     </div>
   </div>
