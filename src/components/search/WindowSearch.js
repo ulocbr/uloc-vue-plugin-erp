@@ -217,7 +217,7 @@ export default {
           this.__keyboardSetCurrentSelection()
           break
         case 9: // TAB key
-          this.hide()
+          // this.hide()
           break
       }
 
