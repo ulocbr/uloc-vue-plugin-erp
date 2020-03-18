@@ -1,5 +1,5 @@
 /*!
- * ERP Layout Plugin v0.0.11
+ * ERP Layout Plugin v0.0.12
  * Uloc Framework
  * (c) 2020-present Tiago Felipe
  * Released under the MIT License.
@@ -293,15 +293,15 @@ $erp-header-menu-module-height = 98px
 ::-webkit-scrollbar-corner {
 }
 $plugin = 'uloc-vue-plugin-erp'
-.erp-box{
+.erp-box {
   border #B7B9C1 1px solid
   background-color #EBECEF
-  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.16);
-  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.16);
-  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.16);
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.16);
   border-radius 2px
   overflow hidden
-  .erp-box-label{
+  .erp-box-label {
     color #000000
     font-size 11px
     padding 7px 9px
@@ -311,7 +311,7 @@ $plugin = 'uloc-vue-plugin-erp'
     border-left none
     user-select none
     position relative
-    &:after{
+    &:after {
       position absolute
       content ''
       left 0
@@ -758,9 +758,13 @@ div.u-input-target
   resize both
   border #A0A2AC 1px solid
   box-shadow none
-  min-height 100px !important
+  
   overflow auto
-  height 100px
+  
+  &.erp-select-multiple, &.erp-select-l-h {
+    min-height 100px !important
+    height 100px
+  }
   .erp-select-container {
     position relative
   }

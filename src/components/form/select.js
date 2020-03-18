@@ -26,7 +26,8 @@ export default {
     radio: Boolean,
     toggle: Boolean,
     simple: Boolean,
-    propoverClass: String
+    propoverClass: String,
+    limitHeight: Boolean
   },
   data () {
     return {
@@ -425,7 +426,7 @@ export default {
             h(UPopover, {
               ref: 'popover',
               staticClass: 'erp-select-popup',
-              'class': [this.dark ? 'bg-dark' : null, this.propoverClass || null],
+              'class': [this.dark ? 'bg-dark' : null, this.propoverClass || null, this.limitHeight && 'erp-select-l-h'],
               props: {
                 fit: true,
                 disable: !this.editable,
