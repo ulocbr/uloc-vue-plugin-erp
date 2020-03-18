@@ -582,7 +582,7 @@ export default {
 
       <p class="m-t"><small>Advanced Select</small></p>
       <div class="m-r" style="width: 200px; display: inline-block">
-        <erp-select placeholder="Selecione" :options="forms.select2Options" :columns="forms.select2Columns"
+        <erp-select placeholder="Selecione" limit-height :options="forms.select2Options" :columns="forms.select2Columns"
                     v-model="forms.select2" loading />
         {{forms.select2}}
       </div>

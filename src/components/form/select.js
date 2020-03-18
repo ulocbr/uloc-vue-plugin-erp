@@ -426,7 +426,7 @@ export default {
             h(UPopover, {
               ref: 'popover',
               staticClass: 'erp-select-popup',
-              'class': [this.dark ? 'bg-dark' : null, this.propoverClass || null, this.limitHeight && 'erp-select-l-h'],
+              'class': [this.dark ? 'bg-dark' : null, this.propoverClass || null, this.limitHeight ? 'erp-select-l-h' : null],
               props: {
                 fit: true,
                 disable: !this.editable,
