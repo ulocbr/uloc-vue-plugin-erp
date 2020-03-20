@@ -641,7 +641,7 @@ export default {
 
       <p class="m-t"><small>Checkbox</small></p>
       <div class="m-r" style="width: 216px; display: inline-block">
-        <erp-checkbox v-model="forms.checkbox" />
+        <erp-checkbox v-model="forms.checkbox">Teste</erp-checkbox>
       </div>
 
       <input />

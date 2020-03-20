@@ -50,27 +50,33 @@ export default {
   render (h) {
     return h('div', {
       staticClass: 'erp-checkbox',
-      attrs: { tabindex: 0 },
+      attrs: {tabindex: 0},
       on: {
         click: this.toggle,
-        focus: () => { this.$emit('focus') },
-        blur: () => { this.$emit('blur') },
+        focus: () => {
+          this.$emit('focus')
+        },
+        blur: () => {
+          this.$emit('blur')
+        },
         keydown: this.__handleKeyDown
       }
     }, [
-      h('input', {
-        staticClass: 'erp-checkbox-input',
-        attrs: {
-          type: 'checkbox',
-          id: this.checkId
-        },
-        on: {change: this.toggle},
-        domProps: {
-          checked: this.model
-        }
-      }),
-      h('span', {staticClass: 'erp-checkbox-fake'}),
-      h('span', {staticClass: 'erp-checkbox-mark'})
+      h('div', {staticClass: 'erp-checkbox-container'}, [
+        h('input', {
+          staticClass: 'erp-checkbox-input',
+          attrs: {
+            type: 'checkbox',
+            id: this.checkId
+          },
+          on: {change: this.toggle},
+          domProps: {
+            checked: this.model
+          }
+        }),
+        h('span', {staticClass: 'erp-checkbox-fake'}),
+        h('span', {staticClass: 'erp-checkbox-mark'})
+      ]), this.$slots.default
     ])
   }
 }

@@ -1,5 +1,5 @@
 /*
- * ERP Layout Plugin v0.0.17
+ * ERP Layout Plugin v0.0.18
  * Uloc Framework
  * (c) 2020-present Tiago Felipe
  * Released under the MIT License.
@@ -945,12 +945,12 @@ div.u-input-target {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  display: inline-block;
   cursor: pointer;
+}
+.erp-checkbox .erp-checkbox-container {
   display: inline-block;
   position: relative;
-  width: 13px;
-  height: 13px;
-  font-size: 13px;
 }
 .erp-checkbox input {
   position: absolute;
@@ -960,9 +960,8 @@ div.u-input-target {
   width: 0;
 }
 .erp-checkbox .erp-checkbox-fake {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  display: inline-block;
   height: 13px;
   width: 13px;
   background-color: #ebecf0;
