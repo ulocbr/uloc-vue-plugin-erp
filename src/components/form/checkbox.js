@@ -5,6 +5,7 @@ export default {
   mixins: [],
   props: {
     value: {required: true},
+    checkId: String,
     disable: Boolean,
     readonly: Boolean
   },
@@ -62,7 +63,8 @@ export default {
         attrs: {type: 'checkbox'},
         on: {change: this.toggle},
         domProps: {
-          checked: this.model
+          checked: this.model,
+          id: this.checkId
         }
       }),
       h('span', {staticClass: 'erp-checkbox-fake'}),
