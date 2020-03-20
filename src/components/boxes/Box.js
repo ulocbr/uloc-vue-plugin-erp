@@ -12,7 +12,11 @@ export default {
       return {}
     },
     computedLabelClass () {
-      return [...this.labelClass]
+      let css = []
+      if (this.labelClass) {
+        css.push(this.labelClass)
+      }
+      return css
     }
   },
   methods: {},
