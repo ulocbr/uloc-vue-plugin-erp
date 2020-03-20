@@ -60,11 +60,13 @@ export default {
     }, [
       h('input', {
         staticClass: 'erp-checkbox-input',
-        attrs: {type: 'checkbox'},
+        attrs: {
+          type: 'checkbox',
+          id: this.checkId
+        },
         on: {change: this.toggle},
         domProps: {
-          checked: this.model,
-          id: this.checkId
+          checked: this.model
         }
       }),
       h('span', {staticClass: 'erp-checkbox-fake'}),
