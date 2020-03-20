@@ -17,6 +17,7 @@ import HelperInputBtn from '../../src/components/form/helpers/HelperInputBtn'
 import ErpSelect from '../../src/components/form/select'
 import ErpLabel from '../../src/components/form/ErpLabel'
 import ErpBox from '../../src/components/boxes/Box'
+import ErpCheckbox from '../../src/components/form/checkbox'
 
 export default {
   inject: {
@@ -113,7 +114,8 @@ export default {
           {label: 'Detalhes', value: 'desc'}
         ],
         date1: null,
-        windowSearch: null
+        windowSearch: null,
+        checkbox: false
       }
     }
   },
@@ -285,6 +287,7 @@ export default {
     }
   },
   components: {
+    ErpCheckbox,
     ErpBox,
     ErpLabel,
     ErpSelect,
@@ -635,6 +638,13 @@ export default {
           <div>...</div>
         </erp-box>
       </div>
+
+      <p class="m-t"><small>Checkbox</small></p>
+      <div class="m-r" style="width: 216px; display: inline-block">
+        <erp-checkbox v-model="forms.checkbox" />
+      </div>
+
+      <input />
 
     </div>
   </div>

@@ -1,5 +1,5 @@
 /*
- * ERP Layout Plugin v0.0.13
+ * ERP Layout Plugin v0.0.14
  * Uloc Framework
  * (c) 2020-present Tiago Felipe
  * Released under the MIT License.
@@ -1277,6 +1277,80 @@ div.u-input-target {
 }
 [dir=rtl] .erp-label.erp-label-align-right .label-title {
   left: 26px;
+}
+.erp-checkbox {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: block;
+  position: relative;
+}
+[dir] .erp-checkbox {
+  cursor: pointer;
+}
+.erp-checkbox input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+[dir] .erp-checkbox input {
+  cursor: pointer;
+}
+.erp-checkbox .erp-checkbox-fake {
+  position: absolute;
+  top: 0;
+  height: 13px;
+  width: 13px;
+}
+[dir] .erp-checkbox .erp-checkbox-fake {
+  background-color: #ebecf0;
+  border: #9da0aa 1px solid;
+  padding: 1px;
+}
+[dir=ltr] .erp-checkbox .erp-checkbox-fake {
+  left: 0;
+}
+[dir=rtl] .erp-checkbox .erp-checkbox-fake {
+  right: 0;
+}
+.erp-checkbox .erp-checkbox-fake:after {
+  content: '';
+  display: block;
+  width: 9px;
+  height: 9px;
+}
+[dir] .erp-checkbox .erp-checkbox-fake:after {
+  background-color: #fff;
+  border: #caccd4 1px solid;
+}
+.erp-checkbox .erp-checkbox-mark {
+  top: -3px;
+  width: 6px;
+  height: 12px;
+  display: none;
+  position: absolute;
+}
+[dir] .erp-checkbox .erp-checkbox-mark {
+  border: solid #201f35;
+}
+[dir=ltr] .erp-checkbox .erp-checkbox-mark {
+  left: 6px;
+  border-width: 0 2px 3px 0;
+  transform: rotate(38deg);
+}
+[dir=rtl] .erp-checkbox .erp-checkbox-mark {
+  right: 6px;
+  border-width: 0 0 3px 2px;
+  transform: rotate(-38deg);
+}
+.erp-checkbox input:checked ~ .erp-checkbox-mark {
+  display: block;
+}
+[dir] .erp-checkbox:hover input ~ .erp-checkbox-fake, [dir] .erp-checkbox:focus input ~ .erp-checkbox-fake {
+  background-color: #ccc;
+  border: #81848e 1px solid;
 }
 .erp-w-search {
   width: 100%;
