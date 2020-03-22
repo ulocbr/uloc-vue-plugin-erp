@@ -41,12 +41,13 @@ export default {
       this.toggledMenuModule = v
     },
     toggledMenuModule (v) {
-      let icon = this.$refs.toggleIcon
+      // TODO: Move to parent component
+      /* let icon = this.$refs.toggleIcon.$el.cloneNode(true)
       if (v) {
         document.body.append(icon)
       } else {
         this.$el.append(icon)
-      }
+      } */
     }
   },
   methods: {
