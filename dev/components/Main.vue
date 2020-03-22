@@ -327,6 +327,9 @@ export default {
     Btn:
     <div class="m-t">
       <e-btn md label="Registrar solicitação"></e-btn>
+      <e-btn md color="blue" label="Registrar solicitação" class="m-l"></e-btn>
+      <e-btn md color="positive" label="Registrar solicitação" class="m-l"></e-btn>
+      <e-btn md color="negative" label="Registrar solicitação" class="m-l"></e-btn>
     </div>
 
     <br><br>
