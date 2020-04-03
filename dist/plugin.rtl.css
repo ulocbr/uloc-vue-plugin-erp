@@ -1,5 +1,5 @@
 /*
- * ERP Layout Plugin v0.0.27
+ * ERP Layout Plugin v0.0.28
  * Uloc Framework
  * (c) 2020-present Tiago Felipe
  * Released under the MIT License.
@@ -1452,6 +1452,42 @@ div.u-input-target {
   background-color: #e8e9ed;
   border: #cacbd3;
 }
+.erp-w-table.erp-w-table-fixed {
+  position: relative;
+  min-height: 100px;
+  display: flex;
+/*tbody {
+      position absolute
+      left 0
+      top 0
+      right 0
+      bottom 0
+      overflow auto
+    }*/
+}
+.erp-w-table.erp-w-table-fixed .erp-w-table-header {
+  flex: 0;
+}
+.erp-w-table.erp-w-table-fixed .erp-w-table-content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.erp-w-table.erp-w-table-fixed .erp-w-table-content .erp-w-table-ctable {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow-y: scroll;
+}
+[dir=ltr] .erp-w-table.erp-w-table-fixed .erp-w-table-content .erp-w-table-ctable {
+  left: 0;
+  right: 0;
+}
+[dir=rtl] .erp-w-table.erp-w-table-fixed .erp-w-table-content .erp-w-table-ctable {
+  right: 0;
+  left: 0;
+}
 .e-w-table-footer-result {
   height: 24px;
   line-height: 24px;
@@ -1526,6 +1562,28 @@ div.u-input-target {
 }
 [dir] .erp-table .u-table-progress td:last-child, [dir] .erp-table .u-table-progress th:last-child {
   padding: 2px 0 !important;
+}
+.erp-w-table-pagination {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.erp-w-table-pagination .e-p-input {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+[dir=ltr] .erp-w-table-pagination .e-p-input {
+  margin-left: 10px;
+}
+[dir=rtl] .erp-w-table-pagination .e-p-input {
+  margin-right: 10px;
+}
+.erp-w-table-pagination .e-p-input input {
+  max-width: 25px;
+}
+[dir] .erp-w-table-pagination .e-p-input .u-btn {
+  padding: 4px 6px;
 }
 .erp-tabs {
   display: flex;

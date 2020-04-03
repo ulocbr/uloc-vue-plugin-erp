@@ -1,5 +1,5 @@
 /*!
- * ERP Layout Plugin v0.0.27
+ * ERP Layout Plugin v0.0.28
  * Uloc Framework
  * (c) 2020-present Tiago Felipe
  * Released under the MIT License.
@@ -1077,6 +1077,38 @@ div.u-input-target
     background-color #E8E9ED
     border #CACBD3
   }
+  &.erp-w-table-fixed {
+    position: relative
+    min-height: 100px
+    display flex
+    .erp-w-table-header {
+      flex 0
+    }
+    .erp-w-table-content {
+      flex 1
+      display flex
+      justify-content space-between
+      position relative
+      .erp-w-table-ctable {
+        position absolute
+        left 0
+        top 0
+        right 0
+        bottom 0
+        overflow-y: scroll
+        td {
+        }
+      }
+    }
+    /*tbody {
+      position absolute
+      left 0
+      top 0
+      right 0
+      bottom 0
+      overflow auto
+    }*/
+  }
 }
 .e-w-table-footer-result {
   background-color #FFFFFF
@@ -1124,7 +1156,7 @@ div.u-input-target
     width 15px
     height 15px
   }
-  .u-checkbox{
+  .u-checkbox {
     .text-faded {
       color #D4D7DC !important
     }
@@ -1132,13 +1164,30 @@ div.u-input-target
   .u-table-sort-icon {
     font-size 100% !important
   }
-  .u-table-progress{
+  .u-table-progress {
     padding none !important
-    td, th{
+    td, th {
       padding 2px 0 !important
-      &:last-child{
+      &:last-child {
         padding 2px 0 !important
       }
+    }
+  }
+}
+.erp-w-table-pagination {
+  display flex
+  align-items center
+  flex-direction row
+  .e-p-input {
+    display flex
+    align-items center
+    flex-direction row
+    margin-left: 10px
+    input {
+      max-width 25px
+    }
+    .u-btn{
+      padding 4px 6px
     }
   }
 }
