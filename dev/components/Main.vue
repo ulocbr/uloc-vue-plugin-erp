@@ -1,6 +1,7 @@
 <script>
 import menu from '../sample-data/menu'
 import wtableData from '../sample-data/window-table-data'
+import wtableData2 from '../sample-data/window-table-data2'
 import tableData from '../sample-data/table-data'
 import EBtn from '../../src/components/button/EBtn.js'
 import EWindowTable from '../../src/components/table/EWindowTable'
@@ -18,6 +19,7 @@ import ErpSelect from '../../src/components/form/select'
 import ErpLabel from '../../src/components/form/ErpLabel'
 import ErpBox from '../../src/components/boxes/Box'
 import ErpCheckbox from '../../src/components/form/checkbox'
+import ETablePagination from '../../src/components/table/ETablePagination'
 
 export default {
   inject: {
@@ -116,7 +118,8 @@ export default {
         date1: null,
         windowSearch: null,
         checkbox: false
-      }
+      },
+      page: 1
     }
   },
   computed: {
@@ -125,6 +128,9 @@ export default {
     },
     wtableData () {
       return wtableData
+    },
+    wtableData2 () {
+      return wtableData2
     },
     tableData () {
       return tableData
@@ -287,6 +293,7 @@ export default {
     }
   },
   components: {
+    ETablePagination,
     ErpCheckbox,
     ErpBox,
     ErpLabel,
@@ -336,7 +343,7 @@ export default {
     <div class="m-b">Window Table:</div>
     <div class="wrapper bg-white flex justify-between" style="height: 200px">
       <div class="m-t col-grow flex justify-between h-full" style="max-width: 900px; margin: auto">
-        <e-window-table class="col-grow h-full"
+        <e-window-table fixed class="col-grow h-full"
                         :columns="['Cod. Remoção', 'Data', 'Origem', 'Destino', 'Reboquista', 'Status', 'Opções']"
         >
           <e-tr v-for="data in wtableData" :key="data.id">
@@ -359,6 +366,37 @@ export default {
             <e-table-footer-result class="text-right">Total de remoções = 1</e-table-footer-result>
           </e-table-footer>
         </e-window-table>
+      </div>
+    </div>
+
+    <div class="wrapper bg-white flex justify-between">
+      <div class="m-t col-grow flex justify-between" style="max-width: 900px; margin: auto">
+        <e-window-table style="min-height: 200px" fixed class="col-grow h-full"
+                        :columns="['Cod. Remoção', 'Data', 'Origem', 'Destino', 'Reboquista', 'Status', 'Opções']"
+        >
+          <e-tr v-for="data in wtableData2" :key="data.id">
+            <e-td>{{ data.codigo }}</e-td>
+            <e-td>{{ data.data }}</e-td>
+            <e-td>{{ data.origem }}</e-td>
+            <e-td>{{ data.destino }}</e-td>
+            <e-td>{{ data.reboquista }}</e-td>
+            <e-td>
+              <div class="flex items-center">
+                <e-btn-circle-status class="bg-blue-10 m-r-xs" />
+                Ativo
+              </div>
+            </e-td>
+            <e-td><a><i class="erp-icon search min"></i> </a></e-td>
+          </e-tr>
+          <e-table-footer slot="footer" class="flex flex-center">
+            <e-table-footer-result class="m-r text-right">Total de remoções = 1</e-table-footer-result>
+            <e-table-footer-result class="m-r text-right">Total de remoções = 1</e-table-footer-result>
+            <e-table-footer-result class="text-right">Total de remoções = 1</e-table-footer-result>
+          </e-table-footer>
+        </e-window-table>
+      </div>
+      <div class=" w-full flex m-t-sm">
+        <e-table-pagination v-model="page" />
       </div>
     </div>
 

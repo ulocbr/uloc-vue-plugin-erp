@@ -51,7 +51,7 @@ export default {
   },
   render (h) {
     let columns = []
-    if (Array.isArray(this.columns)) {
+    if (Array.isArray(this.columns)) { // TODO: Corrigir erro, falta elemento TR
       columns.push(
         this.columns.map((item) => {
           return h('th', item.label)
