@@ -37,8 +37,8 @@ export default {
           this.$fakeThead.querySelector('tr').childNodes.forEach((cnode, cindex) => {
             if (cindex === index) {
               cnode.style.width = node.offsetWidth + 'px'
-              // cnode.style.minWidth = node.offsetWidth + 'px'
-              // cnode.style.maxWidth = node.offsetWidth + 'px'
+              cnode.style.minWidth = node.offsetWidth + 'px'
+              cnode.style.maxWidth = node.offsetWidth + 'px'
             }
           })
         })
