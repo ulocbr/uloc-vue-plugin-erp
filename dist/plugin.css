@@ -1,5 +1,5 @@
 /*
- * ERP Layout Plugin v0.0.29
+ * ERP Layout Plugin v0.0.30
  * Uloc Framework
  * (c) 2020-present Tiago Felipe
  * Released under the MIT License.
@@ -1037,6 +1037,7 @@ div.u-input-target {
   border: #cacbd3 1px solid;
   background: #f8f8f9;
   background: linear-gradient(180deg, #f8f8f9 0%, #f2f3f4 100%);
+  white-space: nowrap;
 }
 .erp-w-table table th:first-child {
   text-align: right;
