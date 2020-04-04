@@ -24,6 +24,9 @@ export default {
         this.$fakeThead = clone
         // thead.classList.add('hide')
         this.$refs.table.style.marginTop = '-' + thead.offsetHeight + 'px'
+        window.setTimeout(() => {
+          this.$refs.table.style.marginTop = '-' + thead.offsetHeight + 'px'
+        }, 10)
       }
     })
   },
@@ -33,6 +36,7 @@ export default {
         if (!this.$fakeThead) {
           return
         }
+        this.$refs.table.style.marginTop = '-' + this.$refs.thead.offsetHeight + 'px'
         let tr = this.$el.querySelector('tbody tr')
         tr.childNodes.forEach((node, index) => {
           this.$fakeThead.querySelector('tr').childNodes.forEach((cnode, cindex) => {
