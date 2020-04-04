@@ -22,7 +22,8 @@ export default {
         table.appendChild(clone)
         this.$refs.theader.prepend(table)
         this.$fakeThead = clone
-        thead.classList.add('hide')
+        // thead.classList.add('hide')
+        this.$refs.table.style.marginTop = '-' + thead.offsetHeight + 'px'
       }
     })
   },
@@ -55,7 +56,7 @@ export default {
   },
   render (h) {
     let getTable = () => {
-      return h('table', [
+      return h('table', {ref: 'table'}, [
         h('thead', {ref: 'thead', staticClass: 'erp-select-thead'}, [
           h('tr', {ref: 'headTr', staticClass: 'erp-select-thead-tr'}, [
             this.columns.map((item) => {
