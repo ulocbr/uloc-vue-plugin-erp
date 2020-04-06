@@ -6,7 +6,7 @@ export default [
       {
         component: 'Minha conta',
         features: [
-          {name: 'Meu perfil', icon: 'perfil'},
+          {name: 'Meu perfil', icon: 'perfil', clickEvent: () => { alert('Test') }},
           {name: 'Configurações', icon: 'config', href: '/#/home'}
         ]
       },

@@ -42,12 +42,17 @@ export default {
       this.items.forEach((item) => {
         // TODO: Validate item
         let attrs = {}
+        let events = {}
         if (item.href) {
           attrs['href'] = item.href
         }
+        if (item.clickEvent && typeof item.clickEvent === 'function') {
+          events.click = item.clickEvent
+        }
         components.push(h('li', [
           h('a', {
-            attrs: attrs
+            attrs: attrs,
+            on: events
           }, [
             h('i', {staticClass: 'erp-icon ' + item.icon}, [item.tip ? h('div', {staticClass: 'erp-module-item-tip'}, item.tip) : null]),
             h('span', item.name)
