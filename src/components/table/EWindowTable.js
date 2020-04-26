@@ -38,6 +38,9 @@ export default {
         }
         this.$refs.table.style.marginTop = '-' + this.$refs.thead.offsetHeight + 'px'
         let tr = this.$el.querySelector('tbody tr')
+        if (tr.childNodes.length !== this.$fakeThead.querySelector('tr').childNodes.length) {
+          return
+        }
         tr.childNodes.forEach((node, index) => {
           this.$fakeThead.querySelector('tr').childNodes.forEach((cnode, cindex) => {
             if (cindex === index) {

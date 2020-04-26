@@ -374,25 +374,11 @@ export default {
         <e-window-table style="min-height: 200px" fixed class="col-grow h-full"
                         :columns="['Cod. Remoção', 'Data', 'Origem', 'Destino', 'Reboquista', 'Status', 'Opções']"
         >
-          <e-tr v-for="data in wtableData2" :key="data.id">
-            <e-td>{{ data.codigo }}</e-td>
-            <e-td>{{ data.data }}</e-td>
-            <e-td>{{ data.origem }}</e-td>
-            <e-td>{{ data.destino }}</e-td>
-            <e-td>{{ data.reboquista }}</e-td>
-            <e-td>
-              <div class="flex items-center">
-                <e-btn-circle-status class="bg-blue-10 m-r-xs" />
-                Ativo
-              </div>
+          <e-tr v-if="!lances || !lances.length">
+            <e-td style="text-align: left !important;" colspan="100%">
+              Nenhum registro
             </e-td>
-            <e-td><a><i class="erp-icon search min"></i> </a></e-td>
           </e-tr>
-          <e-table-footer slot="footer" class="flex flex-center">
-            <e-table-footer-result class="m-r text-right">Total de remoções = 1</e-table-footer-result>
-            <e-table-footer-result class="m-r text-right">Total de remoções = 1</e-table-footer-result>
-            <e-table-footer-result class="text-right">Total de remoções = 1</e-table-footer-result>
-          </e-table-footer>
         </e-window-table>
       </div>
       <div class=" w-full flex m-t-sm">
