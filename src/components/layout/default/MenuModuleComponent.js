@@ -46,6 +46,9 @@ export default {
         if (item.href) {
           attrs['href'] = item.href
         }
+        if (item.target) {
+          attrs['target'] = item.target
+        }
         if (item.clickEvent && typeof item.clickEvent === 'function') {
           events.click = item.clickEvent
         }
