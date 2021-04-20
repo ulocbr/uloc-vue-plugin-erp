@@ -1,5 +1,5 @@
 /*
- * ERP Layout Plugin v0.0.38
+ * ERP Layout Plugin v0.0.39
  * Uloc Framework
  * (c) 2020-present Tiago Felipe
  * Released under the MIT License.
@@ -115,4 +115,7 @@
 }
 [dir] .erp-icon.proccess {
   background-position: -416px -64px !important;
+}
+[dir] .erp-icon.mkt {
+  background-position: -352px -64px !important;
 }
