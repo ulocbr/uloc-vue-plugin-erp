@@ -1,5 +1,5 @@
 /*
- * ERP Layout Plugin v0.0.39
+ * ERP Layout Plugin v0.0.40
  * Uloc Framework
  * (c) 2020-present Tiago Felipe
  * Released under the MIT License.
@@ -773,7 +773,6 @@ div.u-input-target {
   position: relative;
 }
 .erp-select-popup .erp-select-desc {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
@@ -841,7 +840,6 @@ div.u-input-target {
   border-collapse: collapse;
 }
 .erp-select-table .table-helper-header {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;

@@ -1,6 +1,6 @@
 {
   "name": "uloc-vue-plugin-erp",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "description": "Provide ERP Layout and Features for Uloc Vue Framework",
   "module": "src/index.esm.js",
   "main": "dist/index.common.js",
@@ -128,8 +128,8 @@
     "last 1 version, not dead, ie >= 11"
   ],
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "uloc-vue": "ulocbr/uloc-vue#master",
-    "uloc-vue-auth": "ulocbr/uloc-vue-auth#master"
+    "uloc-vue-auth": "ulocbr/uloc-vue-auth"
   }
 }
