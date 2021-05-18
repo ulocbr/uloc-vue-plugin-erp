@@ -8773,16 +8773,16 @@ uglify-to-browserify@~1.0.0:
   integrity sha1-bgkk1r2mta/jSeOabWMoUKD4grc=
 
 uloc-vue-auth@ulocbr/uloc-vue-auth:
-  version "0.0.6"
-  resolved "https://codeload.github.com/ulocbr/uloc-vue-auth/tar.gz/71bb23c0cd82c1993c44eb96d9d26b29fcf95ec4"
+  version "0.0.7"
+  resolved "https://codeload.github.com/ulocbr/uloc-vue-auth/tar.gz/5aefc003b971e2cf78af8c660dc4e70749e5c859"
   dependencies:
     axios "^0.21.1"
     axios-extensions "^3.1.2"
-    uloc-vue ulocbr/uloc-vue#master
+    uloc-vue ulocbr/uloc-vue
 
-uloc-vue@ulocbr/uloc-vue#master:
-  version "0.0.10"
-  resolved "https://codeload.github.com/ulocbr/uloc-vue/tar.gz/0d68df921d053f1f9ac201e1fa447cebef35b44e"
+uloc-vue@ulocbr/uloc-vue:
+  version "0.0.11"
+  resolved "https://codeload.github.com/ulocbr/uloc-vue/tar.gz/9b8b75d13194d6a92a74ec36c38cd52471fc4759"
 
 unbox-primitive@^1.0.0:
   version "1.0.1"
