@@ -9,7 +9,6 @@ export default {
   },
   provide () {
     return {
-      erpheader: this.erpheader,
       posmenu: this
     }
   },
@@ -44,10 +43,7 @@ export default {
     return h('div', {
       staticClass: 'u-erp-posmenu',
       'class': this.computedClass,
-      style: this.computedStyle,
-      on: {
-        click: this.click
-      }
+      style: this.computedStyle
     }, [
       this.$slots.default
     ])
