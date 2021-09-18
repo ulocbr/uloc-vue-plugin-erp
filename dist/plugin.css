@@ -1,5 +1,5 @@
 /*
- * ERP Layout Plugin v0.0.41
+ * ERP Layout Plugin v0.0.42
  * Uloc Framework
  * (c) 2020-present Tiago Felipe
  * Released under the MIT License.
@@ -284,6 +284,150 @@ body {
 ::-webkit-scrollbar-track {
   border-radius: 0;
   margin: 0;
+}
+.u-erp-posmenu {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  min-height: 40px;
+  background-color: #fff;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.039);
+}
+.u-erp-posmenu .posmenu-default {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  height: 100%;
+  color: #969696;
+  font-size: 12px;
+}
+.u-erp-posmenu .posmenu-default .left-modulos {
+  flex: 1;
+  max-width: 200px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  line-height: 1;
+  cursor: pointer;
+}
+.u-erp-posmenu .posmenu-default .left-modulos svg {
+  margin-right: 5px;
+  transition: all 0.5s;
+  transform: rotate(180deg);
+}
+.u-erp-posmenu .posmenu-default .right-rest {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  justify-content: flex-end;
+}
+.u-erp-posmenu .posmenu-default .right-rest .smart-search {
+  width: 246px;
+  background-color: #eef2f8;
+  border-radius: 14px;
+  height: 28px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.u-erp-posmenu .posmenu-default .right-rest .smart-search input {
+  border: none;
+  background: none;
+  background-color: transparent;
+  height: 28px;
+  padding: 0 14px;
+  color: #969696;
+  font-size: 12px;
+  flex: 1;
+}
+.u-erp-posmenu .posmenu-default .right-rest .smart-search .search-icon {
+  flex: 0;
+  padding-right: 12px;
+}
+.u-erp-posmenu .posmenu-default .right-rest .menu-diviser {
+  height: 25px;
+  min-height: 25px;
+  margin-left: 30px;
+  border-left: #cfe0ed 1px solid;
+  padding-right: 30px;
+}
+.u-erp-posmenu .posmenu-default .right-rest .posmenu-icons {
+  display: flex;
+  align-items: center;
+}
+.u-erp-posmenu .posmenu-default .right-rest .posmenu-icons .u-erp-posmenu-icon {
+  margin-right: 20px;
+}
+.u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon {
+  color: #7f949e;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon i {
+  color: #7f949e;
+  height: 16px;
+  font-size: 16px;
+}
+.u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon .u-erp-posmenu-icon-notify {
+  transition: all 0.2s;
+  position: absolute;
+  top: -4px;
+  right: -10px;
+  width: auto;
+  padding: 0 4px;
+  height: 12px;
+  font-size: 10px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1;
+}
+.u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon .u-erp-posmenu-icon-notify.notify-default {
+  background-color: #fa4040;
+  color: #fff;
+}
+.u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon:hover i {
+  color: #0f4158;
+}
+.u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon:hover .u-erp-posmenu-icon-notify {
+  top: -8px;
+}
+.u-erp-posmenu .posmenu-default.openedMenuModule .left-modulos svg {
+  transform: rotate(0deg);
+}
+.u-erp-posmenu-tooltip {
+  font-size: 11px;
+  padding: 4px 6px;
+  background-color: #222;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.erp-profile-menu {
+  display: flex;
+  align-items: center;
+}
+.erp-profile-menu .profile-icon {
+  overflow: hidden;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: #d2e2ee 1px solid;
+  padding: 2px;
+  cursor: pointer;
+}
+.erp-profile-menu .profile-icon img {
+  border-radius: 50%;
+}
+.erp-profile-menu .profile-icon:hover {
+  border: #9cb1c1 1px solid;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.039);
 }
 .erp-box {
   border: #b7b9c1 1px solid;

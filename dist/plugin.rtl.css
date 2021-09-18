@@ -1,5 +1,5 @@
 /*
- * ERP Layout Plugin v0.0.41
+ * ERP Layout Plugin v0.0.42
  * Uloc Framework
  * (c) 2020-present Tiago Felipe
  * Released under the MIT License.
@@ -359,6 +359,209 @@ html[dir], [dir] body {
 [dir] ::-webkit-scrollbar-track {
   border-radius: 0;
   margin: 0;
+}
+.u-erp-posmenu {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  min-height: 40px;
+}
+[dir] .u-erp-posmenu {
+  background-color: #fff;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.039);
+}
+.u-erp-posmenu .posmenu-default {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  height: 100%;
+  color: #969696;
+  font-size: 12px;
+}
+.u-erp-posmenu .posmenu-default .left-modulos {
+  flex: 1;
+  max-width: 200px;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+[dir] .u-erp-posmenu .posmenu-default .left-modulos {
+  cursor: pointer;
+}
+[dir=ltr] .u-erp-posmenu .posmenu-default .left-modulos {
+  padding-left: 15px;
+}
+[dir=rtl] .u-erp-posmenu .posmenu-default .left-modulos {
+  padding-right: 15px;
+}
+.u-erp-posmenu .posmenu-default .left-modulos svg {
+  transition: all 0.5s;
+}
+[dir=ltr] .u-erp-posmenu .posmenu-default .left-modulos svg {
+  margin-right: 5px;
+  transform: rotate(180deg);
+}
+[dir=rtl] .u-erp-posmenu .posmenu-default .left-modulos svg {
+  margin-left: 5px;
+  transform: rotate(-180deg);
+}
+.u-erp-posmenu .posmenu-default .right-rest {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+[dir=ltr] .u-erp-posmenu .posmenu-default .right-rest {
+  padding-right: 10px;
+}
+[dir=rtl] .u-erp-posmenu .posmenu-default .right-rest {
+  padding-left: 10px;
+}
+.u-erp-posmenu .posmenu-default .right-rest .smart-search {
+  width: 246px;
+  height: 28px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+[dir] .u-erp-posmenu .posmenu-default .right-rest .smart-search {
+  background-color: #eef2f8;
+  border-radius: 14px;
+}
+.u-erp-posmenu .posmenu-default .right-rest .smart-search input {
+  height: 28px;
+  color: #969696;
+  font-size: 12px;
+  flex: 1;
+}
+[dir] .u-erp-posmenu .posmenu-default .right-rest .smart-search input {
+  border: none;
+  background: none;
+  background-color: transparent;
+  padding: 0 14px;
+}
+.u-erp-posmenu .posmenu-default .right-rest .smart-search .search-icon {
+  flex: 0;
+}
+[dir=ltr] .u-erp-posmenu .posmenu-default .right-rest .smart-search .search-icon {
+  padding-right: 12px;
+}
+[dir=rtl] .u-erp-posmenu .posmenu-default .right-rest .smart-search .search-icon {
+  padding-left: 12px;
+}
+.u-erp-posmenu .posmenu-default .right-rest .menu-diviser {
+  height: 25px;
+  min-height: 25px;
+}
+[dir=ltr] .u-erp-posmenu .posmenu-default .right-rest .menu-diviser {
+  margin-left: 30px;
+  border-left: #cfe0ed 1px solid;
+  padding-right: 30px;
+}
+[dir=rtl] .u-erp-posmenu .posmenu-default .right-rest .menu-diviser {
+  margin-right: 30px;
+  border-right: #cfe0ed 1px solid;
+  padding-left: 30px;
+}
+.u-erp-posmenu .posmenu-default .right-rest .posmenu-icons {
+  display: flex;
+  align-items: center;
+}
+[dir=ltr] .u-erp-posmenu .posmenu-default .right-rest .posmenu-icons .u-erp-posmenu-icon {
+  margin-right: 20px;
+}
+[dir=rtl] .u-erp-posmenu .posmenu-default .right-rest .posmenu-icons .u-erp-posmenu-icon {
+  margin-left: 20px;
+}
+.u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon {
+  color: #7f949e;
+  position: relative;
+  transition: all 0.2s;
+}
+[dir] .u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon {
+  cursor: pointer;
+}
+[dir=ltr] .u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon {
+  margin-right: 10px;
+}
+[dir=rtl] .u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon {
+  margin-left: 10px;
+}
+.u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon i {
+  color: #7f949e;
+  height: 16px;
+  font-size: 16px;
+}
+.u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon .u-erp-posmenu-icon-notify {
+  transition: all 0.2s;
+  position: absolute;
+  top: -4px;
+  width: auto;
+  height: 12px;
+  font-size: 10px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1;
+}
+[dir] .u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon .u-erp-posmenu-icon-notify {
+  padding: 0 4px;
+  border-radius: 12px;
+}
+[dir=ltr] .u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon .u-erp-posmenu-icon-notify {
+  right: -10px;
+}
+[dir=rtl] .u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon .u-erp-posmenu-icon-notify {
+  left: -10px;
+}
+.u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon .u-erp-posmenu-icon-notify.notify-default {
+  color: #fff;
+}
+[dir] .u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon .u-erp-posmenu-icon-notify.notify-default {
+  background-color: #fa4040;
+}
+.u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon:hover i {
+  color: #0f4158;
+}
+.u-erp-posmenu .posmenu-default .right-rest .u-erp-posmenu-icon:hover .u-erp-posmenu-icon-notify {
+  top: -8px;
+}
+[dir] .u-erp-posmenu .posmenu-default.openedMenuModule .left-modulos svg {
+  transform: rotate(0deg);
+}
+.u-erp-posmenu-tooltip {
+  font-size: 11px;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+}
+[dir] .u-erp-posmenu-tooltip {
+  padding: 4px 6px;
+  background-color: #222;
+}
+.erp-profile-menu {
+  display: flex;
+  align-items: center;
+}
+.erp-profile-menu .profile-icon {
+  overflow: hidden;
+  width: 32px;
+  height: 32px;
+}
+[dir] .erp-profile-menu .profile-icon {
+  border-radius: 50%;
+  border: #d2e2ee 1px solid;
+  padding: 2px;
+  cursor: pointer;
+}
+[dir] .erp-profile-menu .profile-icon img {
+  border-radius: 50%;
+}
+[dir] .erp-profile-menu .profile-icon:hover {
+  border: #9cb1c1 1px solid;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.039);
 }
 .erp-box {
   overflow: hidden;
