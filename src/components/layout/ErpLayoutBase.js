@@ -8,6 +8,7 @@ import MenuAccountInfo from './default/MenuAccountInfo'
 import MenuModule from './default/MenuModule'
 import MenuModuleComponent from './default/MenuModuleComponent'
 import ErpLayoutContainer from './default/LayoutContainer'
+import PosMenu from './default/PosMenu'
 
 export default {
   name: 'ErpLayoutBase',
@@ -26,6 +27,10 @@ export default {
     alerts: {
       type: Array,
       default: () => []
+    },
+    posmenu: {
+      type: Boolean,
+      default: true
     },
     user: {
       type: Object,
@@ -95,12 +100,12 @@ export default {
                 }
               }, menuItem.menuName)
             })),
-            h(MenuAlerts, {
+            !this.posmenu && h(MenuAlerts, {
               props: {
                 alerts: self.alerts
               }
             }),
-            h(MenuAccountInfo, {
+            !this.posmenu && h(MenuAccountInfo, {
               props: {
                 user: self.user
               }
@@ -117,6 +122,12 @@ export default {
             })
           }))
         ]),
+        this.posmenu && h(PosMenu, {
+          ref: 'posmenu',
+          props: {
+            user: self.user
+          }
+        }, this.$slots.posmenu),
         h(ErpLayoutContainer, this.$slots.default)
       ]
     )

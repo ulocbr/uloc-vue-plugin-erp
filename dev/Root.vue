@@ -5,10 +5,12 @@ import 'assets/styl/app.styl'
 import 'assets/styl/icons.styl'
 import ErpLayoutBase from '../src/components/layout/ErpLayoutBase'
 import menu from './sample-data/menu'
+import Posmenu from './components/Posmenu'
 
 export default {
   name: 'AppRoot',
   components: {
+    Posmenu,
     ErpLayoutBase
   },
   data () {
@@ -31,7 +33,10 @@ export default {
 <template>
   <div id="uloc-app">
     <u-layout>
-      <ErpLayoutBase :menu-data="menu" :default-active-menu="menu[0].id" :user="{id: 1, name: 'Tiago Felipe', image: 'https://static.tiagofelipe.com/photo.jpg'}">
+      <ErpLayoutBase ref="erplayout"  :menu-data="menu" :default-active-menu="menu[0].id" :user="{id: 1, name: 'Tiago Felipe', image: 'https://static.tiagofelipe.com/photo.jpg'}">
+        <template v-slot:posmenu>
+          <posmenu />
+        </template>
         <router-view />
       </ErpLayoutBase>
     </u-layout>

@@ -9,6 +9,8 @@ import MenuItems from './default/MenuItems'
 import MenuItem from './default/MenuItem'
 import MenuModule from './default/MenuModule'
 import MenuModuleComponent from './default/MenuModuleComponent'
+import PosMenu from './default/PosMenu'
+import PosMenuIcon from './default/PosMenuIcon'
 
 export {
   ErpLayoutBase,
@@ -21,5 +23,7 @@ export {
   MenuItems,
   MenuItem,
   MenuModule,
-  MenuModuleComponent
+  MenuModuleComponent,
+  PosMenu,
+  PosMenuIcon
 }
