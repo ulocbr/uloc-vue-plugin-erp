@@ -43,7 +43,11 @@ export default {
   beforeDestroy () {
   },
   watch: {},
-  methods: {},
+  methods: {
+    click () {
+      this.$emit('click')
+    }
+  },
   render (h) {
     return h('div', {
       staticClass: 'u-erp-posmenu-icon',
