@@ -36,7 +36,7 @@ export default {
       type: Object,
       required: true,
       validator: function (user) {
-        return user.image && user.name
+        return user.name
       }
     }
   },
