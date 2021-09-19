@@ -1,9 +1,9 @@
 export default {
   name: 'ErpPosMenu',
   inject: {
-    erpheader: {
+    erplayout: {
       default () {
-        console.error('ModuleMenu needs to be child of ModuleHeader')
+        console.error('PosMenu needs to be child of ErpLayout')
       }
     }
   },
@@ -30,8 +30,8 @@ export default {
     }
   },
   created () {
-    if (this.erpheader) {
-      this.erpheader.posmenu = this
+    if (this.erplayout) {
+      this.erplayout.posmenu = this
     }
   },
   beforeDestroy () {
