@@ -1,5 +1,5 @@
 /*
- * ERP Layout Plugin v0.0.46
+ * ERP Layout Plugin v0.0.47
  * Uloc Framework
  * (c) 2020-present Tiago Felipe
  * Released under the MIT License.
@@ -118,4 +118,55 @@
 }
 [dir] .erp-icon.mkt {
   background-position: -352px -64px !important;
+}
+[dir] .erp-icon.pay1 {
+  background-position: -320px -64px !important;
+}
+[dir] .erp-icon.pay2 {
+  background-position: -288px -64px !important;
+}
+[dir] .erp-icon.invoice {
+  background-position: -256px -64px !important;
+}
+[dir] .erp-icon.cart {
+  background-position: -224px -64px !important;
+}
+[dir] .erp-icon.charts {
+  background-position: -192px -64px !important;
+}
+[dir] .erp-icon.finalcialbook {
+  background-position: -160px -64px !important;
+}
+[dir] .erp-icon.contract {
+  background-position: -128px -64px !important;
+}
+[dir] .erp-icon.userwork {
+  background-position: -96px -64px !important;
+}
+[dir] .erp-icon.bank {
+  background-position: -64px -64px !important;
+}
+[dir] .erp-icon.centercost {
+  background-position: -64px -64px !important;
+}
+[dir] .erp-icon.audit {
+  background-position: -32px -64px !important;
+}
+[dir] .erp-icon.log {
+  background-position: -448px -96px !important;
+}
+[dir] .erp-icon.api {
+  background-position: -416px -96px !important;
+}
+[dir] .erp-icon.reports {
+  background-position: -384px -96px !important;
+}
+[dir] .erp-icon.connection {
+  background-position: -352px -96px !important;
+}
+[dir] .erp-icon.approved {
+  background-position: -320px -96px !important;
+}
+[dir] .erp-icon.cpf {
+  background-position: -288px -96px !important;
 }
