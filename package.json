@@ -99,7 +99,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-vue": "^5.1.4",
     "sass-loader": "^8.0.0",
-    "shelljs": "^0.8.3",
+    "shelljs": "^0.8.5",
     "style-resources-loader": "^1.2.1",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
