@@ -8781,8 +8781,8 @@ uloc-vue-auth@ulocbr/uloc-vue-auth:
     uloc-vue ulocbr/uloc-vue
 
 uloc-vue@ulocbr/uloc-vue:
-  version "0.0.12"
-  resolved "https://codeload.github.com/ulocbr/uloc-vue/tar.gz/2daecabee8c9a78bf69519d0d3e2564ffbb73be5"
+  version "0.0.13"
+  resolved "https://codeload.github.com/ulocbr/uloc-vue/tar.gz/e523ef3b2d3208e3ebb28205c023c5ca1badfb98"
 
 unbox-primitive@^1.0.0:
   version "1.0.1"
