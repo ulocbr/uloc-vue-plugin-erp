@@ -1,4 +1,4 @@
-import {UField} from 'uloc-vue'
+import {UField, UIcon, UTooltip} from 'uloc-vue'
 
 export default {
   name: 'ErpSField',
@@ -19,7 +19,11 @@ export default {
       validator: v => /^(l|r)(t|b)$/.test(v.toLowerCase())
     },
     noLabel: Boolean,
-    wrap: Boolean
+    wrap: Boolean,
+    iconHelp: {
+      type: String,
+      default: null
+    },
   },
   data () {
     return {}
@@ -63,11 +67,29 @@ export default {
       staticClass: 'erp-s-field',
       'class': this.classes
     }, [
-      h('div', {
+      this.$slots.label || h('div', {
         staticClass: 'erp-s-field-label',
         class: {'no-label': this.noLabel, 'label-wrap': this.wrap},
         style: labelStyle
-      }, this.label),
+      }, [
+        this.label,
+        this.iconHelp ? h(UIcon, {
+          staticClass: 'm-l-xs',
+          props: {
+            name: 'question-circle',
+            color: 'primary',
+            type: 'fa',
+            iconStyle: 'solid'
+          }
+        }, [
+          h(UTooltip, {
+            props: {
+              offset: [5, 5]
+            }
+          }, this.iconHelp)
+        ]) : null,
+        this.$slots.labelContent
+      ]),
       h('div', {
         staticClass: 'erp-s-field-content'
       }, [this.helper ? h('span', {
