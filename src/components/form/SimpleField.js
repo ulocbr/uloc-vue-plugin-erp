@@ -24,6 +24,10 @@ export default {
       type: String,
       default: null
     },
+    required: {
+      type: Boolean,
+      default: false
+    }
   },
   data () {
     return {}
@@ -88,6 +92,7 @@ export default {
             }
           }, this.iconHelp)
         ]) : null,
+        this.required ? h('span', {staticClass: 'm-l-xs required'}, '*') : null,
         this.$slots.labelContent
       ]),
       h('div', {
