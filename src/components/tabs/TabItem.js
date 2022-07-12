@@ -5,7 +5,8 @@ export default {
       type: String,
       required: true
     },
-    active: Boolean
+    active: Boolean,
+    disabled: Boolean
   },
   data () {
     return {
@@ -16,7 +17,8 @@ export default {
   computed: {
     computedClass () {
       return {
-        'active': this.meActive
+        'active': this.meActive,
+        'disabled': this.disabled,
       }
     }
   },
@@ -28,7 +30,7 @@ export default {
       this.meActive = false
     },
     click (e) {
-      this.$parent.$emit('tabClick', {event: e, tab: this.name})
+      !this.disabled && this.$parent.$emit('tabClick', {event: e, tab: this.name})
     }
   },
   render (h) {
