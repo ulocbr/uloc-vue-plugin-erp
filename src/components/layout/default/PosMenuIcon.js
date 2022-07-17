@@ -77,7 +77,7 @@ export default {
           },
           delay: 0
         }, this.tooltip)
-      ]
+      ], this.$slots.default
     ])
   }
 }
